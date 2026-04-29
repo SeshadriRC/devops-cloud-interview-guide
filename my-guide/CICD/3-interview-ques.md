@@ -13,3 +13,26 @@ webhook that triggers a Jenkins Pipeline on every commit, The Jenkins pipeline i
 the cluster.
 
 ---
+
+Q2: How do you Handle Secrets ?
+
+Secrets exist throughout the delivery lifecycle as application secrets, credentials, and other sensitive information should be secured, obfuscated, and governed.
+
+· Code repositories like GitHub, GitLab, and BitBucket.
+· Continuous Integration servers and Continuous Delivery platforms - Jenkins, Bamboo, JFrog, TeamCity, Drone, Harness, GitLab CI/CD, CircleCI, and so on.
+· Cloud Providers and Container Platforms - AWS, GCP, Azure, Kubernetes (as keys,
+configuration files, and other information).
+
+· Infrastructure - (SSH keys, load balancer credentials).
+
+Tools: Hashicorp Vault, AWS Systems Manager, Azure Vault
+
+---
+
+<img width="1919" height="1064" alt="image" src="https://github.com/user-attachments/assets/e90148e2-6212-4ab9-859c-50b711b22a85" />
+
+---
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2f347bb7-f6fa-4e8d-acc3-b01893859ca7" />
+
+---
