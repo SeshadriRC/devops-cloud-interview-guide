@@ -76,3 +76,14 @@ After switch: Traffic --> Green
 - Causes downtime --> No Zero downtime
 
 ---
+
+### How do you achieve zero downtime deployments?
+I typically use strategies like Blue-Green, Rolling, and Canary deployments depending on the system requirements.
+
+- For critical systems --> Blue-Green
+- For cost efficiency --> Rolling
+- For risk mitigation --> Canary
+
+I also ensure health checks, readiness probes, and load balancer routing are properly configured to avoid downtime.
+
+---
