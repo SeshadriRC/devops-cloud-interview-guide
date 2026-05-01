@@ -26,3 +26,26 @@ Eg: VPC-1 --> 172.31.0.0/16
 ```
 <img width="1918" height="825" alt="image" src="https://github.com/user-attachments/assets/586d3e77-ad27-4cae-a3ad-3ae17710039d" />
 <img width="1768" height="318" alt="image" src="https://github.com/user-attachments/assets/d4dfb0fe-a666-44a0-aa34-d2e71f7c0260" />
+
+- refer the below one, i created again bcz it above one got failed due to overlapping CIDR
+
+<img width="1919" height="766" alt="image" src="https://github.com/user-attachments/assets/7225962a-f57d-4d10-bdf6-8b8faec631cd" />
+
+- Accept the request
+
+<img width="1919" height="473" alt="image" src="https://github.com/user-attachments/assets/0aa538fb-4a01-4c2f-bb65-363632fd2b90" />
+
+- Also i created one subnet, since route table doesn't have IG , so this is called private subnet
+
+<img width="1919" height="789" alt="image" src="https://github.com/user-attachments/assets/d023451f-3cdd-49cb-abdf-f770e28fd278" />
+<img width="1904" height="796" alt="image" src="https://github.com/user-attachments/assets/1f93f700-2cb4-4fb9-80a7-577d5c95f7db" />
+
+- But connection couldn't be established due to the above subnet, so i have modified route table of the subnet for both VPC-east and VPC-south, see the below pics.
+
+`10.0.0.0/16` is a CIDR of East
+<img width="1918" height="611" alt="image" src="https://github.com/user-attachments/assets/ec08e0cc-0ae7-4d70-bdf1-55649b1b32d3" />
+
+`172.31.0.0/16` is a CIDR of North
+<img width="1919" height="795" alt="image" src="https://github.com/user-attachments/assets/fcd34052-6fc5-47b3-80c1-696b31faa2a6" />
+
+
