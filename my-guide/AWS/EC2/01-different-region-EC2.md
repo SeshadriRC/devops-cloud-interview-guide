@@ -61,3 +61,6 @@ ubuntu@52.66.242.238:/home/ubuntu/
 key-pair-north.pem
 ```
 
+- However this setup is for only limited purpose, only if we have few VPC's. If in case we have more VPC's then we need to go Transit Gateways
+
+
