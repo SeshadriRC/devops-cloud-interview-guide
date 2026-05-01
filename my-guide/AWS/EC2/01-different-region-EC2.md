@@ -48,4 +48,6 @@ Eg: VPC-1 --> 172.31.0.0/16
 `172.31.0.0/16` is a CIDR of North
 <img width="1919" height="795" alt="image" src="https://github.com/user-attachments/assets/fcd34052-6fc5-47b3-80c1-696b31faa2a6" />
 
+<img width="741" height="295" alt="image" src="https://github.com/user-attachments/assets/797a4a90-09ba-4b20-9ece-ae432a78904f" />
+
 
