@@ -50,4 +50,14 @@ Eg: VPC-1 --> 172.31.0.0/16
 
 <img width="741" height="295" alt="image" src="https://github.com/user-attachments/assets/797a4a90-09ba-4b20-9ece-ae432a78904f" />
 
+- connected using private ip of north EC2
+
+<img width="1176" height="990" alt="image" src="https://github.com/user-attachments/assets/36bb53ad-d867-42c3-a7f3-482f60be9e62" />
+
+```bash
+scp -i /e/WSL/AWS/EC2/first-ec2.pem \
+/e/WSL/AWS/EC2/key-pair-north.pem \
+ubuntu@52.66.242.238:/home/ubuntu/
+key-pair-north.pem
+```
 
