@@ -63,4 +63,60 @@ key-pair-north.pem
 
 - However this setup is for only limited purpose, only if we have few VPC's. If in case we have more VPC's then we need to go Transit Gateways
 
+---
 
+### Transit Gateway
+
+#### Step 1 — Create Transit Gateway
+
+- Only Enter the name, remaining all same
+
+<img width="1918" height="821" alt="image" src="https://github.com/user-attachments/assets/8eb90d8c-b6db-436b-8faf-4591a91d143e" />
+<img width="1919" height="757" alt="image" src="https://github.com/user-attachments/assets/fd8ae77c-13c1-45d0-b9cc-1b7fd5f205e1" />
+
+- Once its in available state we can create TGW attachments
+
+#### Step 2 — Create TGW Attachments
+- Selected only subnet where EC2 is hosted
+<img width="1919" height="836" alt="image" src="https://github.com/user-attachments/assets/7a8424c2-58ce-4951-81fb-8fbd232ba121" />
+
+- Created
+
+<img width="1919" height="416" alt="image" src="https://github.com/user-attachments/assets/a294ac4f-4972-4308-aa19-ea903ec51458" />
+
+#### Step 3 — Verify TGW Route Table
+
+<img width="1918" height="730" alt="image" src="https://github.com/user-attachments/assets/ad98cd81-c677-416d-a8e6-70b8379a5aae" />
+
+Go to:
+
+Transit Gateway Route Tables
+
+Check:
+
+Routes propagated from all 3 VPCs
+
+#### Step 4 — Update VPC Route Tables
+
+Each VPC route table must point to TGW. same like below i updated for remaining 2 vpc's
+
+<img width="1919" height="809" alt="image" src="https://github.com/user-attachments/assets/9d6fae4a-e7df-4ca0-8d83-a4c5bc595c62" />
+
+
+#### Step 5 — Security Groups
+
+On ALL EC2s:
+
+Allow inbound:
+
+- SSH (22)
+- ICMP
+
+Source:
+
+- Other VPC CIDRs
+
+
+#### Note: for me this transit gateway not worked, so i need to try again, will do after sometime. Delete theh TG which you created, first you need to delete the attachments , then delete TG
+
+---
