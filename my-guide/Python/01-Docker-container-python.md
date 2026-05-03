@@ -21,7 +21,7 @@ pip3 install docker
 ```
 import docker
 
-# Initialize Docker client
+# Initialize Docker client, it will connect to the running docker engine
 client = docker.from_env()
 
 # Get image name from user input
