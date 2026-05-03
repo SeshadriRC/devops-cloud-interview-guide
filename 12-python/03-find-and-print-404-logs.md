@@ -11,6 +11,12 @@ Use Python’s `requests` library to fetch the log file from a public URL and fi
 We’ll use a real log sample from GitHub that mimics Apache HTTP access logs. Example log source:
 `https://raw.githubusercontent.com/elastic/examples/master/Common%20Data%20Formats/apache_logs/apache_logs`
 
+- Install the module
+
+```
+pip3 install requests
+```
+
 Here’s the complete script:
 
 ```
