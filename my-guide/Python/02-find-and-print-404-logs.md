@@ -20,6 +20,7 @@ pip3 install requests
 Here’s the complete script:
 
 ```
+
 import requests
 
 # Publicly available Apache log sample
@@ -28,6 +29,7 @@ log_url = 'https://raw.githubusercontent.com/elastic/examples/master/Common%20Da
 try:
     # Fetch the log content
     response = requests.get(log_url)
+    # print(response.text)  -> it will print the actual content
     response.raise_for_status() # This is a safety check. If the website is down or the URL is broken (e.g., a 404 or 500 error), this line will trigger an exception and jump straight to the except block.
     logs = response.text.splitlines()
 
