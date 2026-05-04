@@ -9,6 +9,20 @@ xMatters is used for alerting and incident response. Tools like monitoring syste
 
 ---
 
+**Namespace deletion got stuck**
+
+In our OpenShift environment, one challenge I’ve handled is namespace deletion getting stuck. Even though deleting a namespace should remove all resources, sometimes it remains in Terminating state.
+
+This usually happens due to leftover custom resources—for example from operators like RabbitMQ—which have finalizers attached.
+
+In one case, the user didn’t clean up all resources before requesting deletion. As a result, the namespace got stuck because the custom resource finalizer was preventing deletion.
+
+To resolve it, I first identified the blocking resource using oc get and oc describe. Then I deleted the specific custom resource, which cleared the finalizer dependency. After that, the namespace deletion completed successfully.
+
+As a best practice, we now ensure users clean up all operator-managed resources before deleting namespaces to avoid such issues.
+
+---
+
 **Node provisioning issue during deployment**
 
 - If Cluster Autoscaler doesn’t provision nodes in OpenShift, pods will stay in pending state due to insufficient resources. The common causes are max node limit reached, MachineSet misconfiguration, IAM permission issues in AWS, or pod scheduling constraints like node selectors. I usually debug by checking pending pods, autoscaler logs, and MachineSet status.”
