@@ -54,6 +54,9 @@ Both proxies act as intermediaries in network communication, but they sit at **d
 - **Reverse Proxy**:  
   A company uses NGINX as a reverse proxy to distribute requests to multiple backend services (e.g., `/api`, `/auth`, `/app`).
 
+  <img width="1755" height="684" alt="image" src="https://github.com/user-attachments/assets/5751ba72-5502-4153-b058-f61df05ca331" />
+
+
 ---
 
 > Summary:  
