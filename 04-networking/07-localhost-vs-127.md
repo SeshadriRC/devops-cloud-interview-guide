@@ -21,6 +21,7 @@ Both are special IP addresses used in networking, but they serve very different 
 - Traffic **never leaves your machine**.
 - Example:
   ```bash
+  python3 -m http.server --bind 0.0.0.0
   curl http://127.0.0.1:8080
   ```
   This calls a server running on your **local machine** only.
