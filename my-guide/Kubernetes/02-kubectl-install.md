@@ -1,0 +1,1 @@
+- Follow this [doc](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-kubectl-binary-with-curl-on-linux)  --> I installed using curl
