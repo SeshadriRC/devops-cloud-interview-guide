@@ -13,6 +13,8 @@ Additionally, I work on CI/CD pipeline implementation and maintenance, Infrastru
 
 **Day-2-day-Activities**
 
+- work with 2 to 3 development teams , 3 microservices.
+
 Talking about my day-to-day responsibilities as a DevOps Engineer, I work closely with two development teams in an Agile environment, actively participating in sprint planning, backlog discussions, and quarterly roadmap meetings. This helps me understand the upcoming application and infrastructure requirements and allows me to plan and prioritize DevOps activities accordingly.
 
 My role involves collaborating with developers and supporting them in areas such as infrastructure provisioning, CI/CD implementation, Kubernetes deployments, and cloud operations. Since I manage Infrastructure as Code (IaC) for the teams, I regularly work on building and maintaining reusable Terraform modules for AWS infrastructure. One of the recent implementations I worked on was setting up an EKS cluster within a VPC using a modular Terraform architecture, enabling scalability and reusability for other teams and future onboarding.
