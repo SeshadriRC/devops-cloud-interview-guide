@@ -14,6 +14,7 @@ Additionally, I work on CI/CD pipeline implementation and maintenance, Infrastru
 **Day-2-day-Activities**
 
 - work with 2 to 3 development teams , 3 microservices.
+- Containerize the microservice
 
 Talking about my day-to-day responsibilities as a DevOps Engineer, I work closely with two development teams in an Agile environment, actively participating in sprint planning, backlog discussions, and quarterly roadmap meetings. This helps me understand the upcoming application and infrastructure requirements and allows me to plan and prioritize DevOps activities accordingly.
 
