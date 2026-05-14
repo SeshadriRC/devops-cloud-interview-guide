@@ -3,7 +3,7 @@ What is the difference between Public and Private Subnets?
 
 ### 📝 Short Explanation  
 The key difference lies in **internet accessibility**:  
-- **Public subnets** can directly communicate with the internet.  
+- **Public subnets** can directly communicate with the internet. Public IP address usually don't start with 172.0.0.0
 - **Private subnets** cannot, unless they go through a **NAT Gateway** or similar service.
 
 ## ✅ Answer  
