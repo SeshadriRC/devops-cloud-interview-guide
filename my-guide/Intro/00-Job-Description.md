@@ -19,3 +19,33 @@ Good understanding of infrastructure security, access control, and cloud archite
 Experience building monitoring, alerting, and operational dashboards.
 Strong Python or shell scripting skills for automation, tooling, and platform engineering tasks.
 Strong Linux administration, troubleshooting, and problem-solving skills, with the ability to work independently and take end-to-end ownership.
+
+---
+**TCS Ansible**
+
+Job description
+
+- Design, develop, and maintain Ansible playbooks, roles, and inventories for infrastructure and application automation.
+- Implement and manage Git-based workflows (GitLab/GitHub), including version control, branching strategies, and CI/CD integration.
+- Integrate automation with orchestration and scheduling tools such as Rundeck, Ansible Tower/AWX, or Jenkins.
+- Develop and maintain YAML configurations and Jinja2 templates for scalable and reusable automation.
+- Write and enhance Python scripts for automation logic, validations, or custom Ansible modules.
+- Troubleshoot automation failures, identify root causes, and optimize execution reliability and performance.
+- Collaborate with DevOps, Platform, and Infrastructure teams to promote automation best practices.
+- Ensure automation solutions adhere to security, compliance, and operational standards.
+
+---
+
+**Ansible Developer**
+
+- Proven experience as an Automation Engineer or in an infrastructure automation role.
+- Strong expertise in Ansible (playbooks, roles, variables, Jinja2 templates).
+- Experience working with Ansible Tower / AWX in a production environment.
+- Strong scripting proficiency in Python, PowerShell, Bash.
+- Hands-on experience automating: Linux and Windows servers, Database operations and SQL scripts, OS patching and configuration tasks
+- Familiarity with CI/CD pipelines and DevOps principles.
+- Understanding of Linux commands, Windows administration, and DB concepts, handling APIs of Smartsheet and ServiceNow
+- Ability to troubleshoot and debug complex automation issues.
+- Excellent problem-solving, communication, and collaboration skills.
+
+---
