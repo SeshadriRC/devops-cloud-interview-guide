@@ -23,6 +23,86 @@ Both keywords relate to “looping,” yet they operate at **different layers**:
 
 <img width="1605" height="776" alt="image" src="https://github.com/user-attachments/assets/ffbc5bb8-4c0a-40a8-a63d-48e7fb2c46f0" />
 
+```hcl id="e7jz70"
+toset(["dev","stage"])
+```
+
+is a Terraform function that converts a **list into a set**.
+
+---
+
+# Example
+
+Input list:
+
+```hcl id="8x6w6y"
+["dev","stage"]
+```
+
+After `toset()`:
+
+```hcl id="qjlwm6"
+toset(["dev","stage"])
+```
+
+becomes a **set**:
+
+* unordered
+* unique values only
+
+---
+
+# Why Used?
+
+Mostly used with:
+
+```hcl id="n5pr29"
+for_each
+```
+
+Example:
+
+```hcl id="l5o0qn"
+for_each = toset(["dev","stage"])
+```
+
+Terraform creates resources for:
+
+* dev
+* stage
+
+
+
+# Difference
+
+## List
+
+```hcl id="k7y3q9"
+["dev","stage","dev"]
+```
+
+Allows duplicates and order matters.
+
+
+
+## Set
+
+```hcl id="9o1xw0"
+toset(["dev","stage","dev"])
+```
+
+Result:
+
+```text id="j5k8e4"
+dev
+stage
+```
+
+Duplicate removed automatically.
+
+
+---
+
 #### Example 1 — `for_each` creating three S3 buckets
 
 ```hcl
