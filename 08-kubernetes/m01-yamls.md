@@ -1,3 +1,17 @@
+**Pod**
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+spec:
+  containers:
+  - name: app
+    image: nginx
+```
+
+
 **Deployment**
 
 ```yaml
