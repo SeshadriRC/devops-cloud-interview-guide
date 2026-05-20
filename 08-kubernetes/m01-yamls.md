@@ -34,3 +34,18 @@ spec:
         image: nginx
 
 ```
+
+**Service**
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+spec:
+  selector:
+    app: web
+  ports:
+    - port: 80
+      targetPort: 80
+```
