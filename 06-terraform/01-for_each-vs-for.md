@@ -21,6 +21,8 @@ Both keywords relate to “looping,” yet they operate at **different layers**:
 
 ---
 
+<img width="1605" height="776" alt="image" src="https://github.com/user-attachments/assets/ffbc5bb8-4c0a-40a8-a63d-48e7fb2c46f0" />
+
 #### Example 1 — `for_each` creating three S3 buckets
 
 ```hcl
