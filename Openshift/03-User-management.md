@@ -405,3 +405,198 @@ rather than local OpenShift users.
 That’s the standard enterprise model.
 
 ---
+
+# And edit role will be coming in openshift automatically right ? we won't create that role
+
+Yes, correct.
+
+In OpenShift, roles like:
+
+```text id="0c7o5g"
+view
+edit
+admin
+cluster-admin
+```
+
+are built-in default roles already provided by OpenShift/Kubernetes.
+
+So normally you do NOT create them manually.
+
+You simply assign them.
+
+Example:
+
+```bash id="s6txcv"
+oc policy add-role-to-user edit john -n dev-team
+```
+
+Here:
+
+* `edit` role already exists
+* OpenShift only creates a RoleBinding
+
+---
+
+# Built-In Roles
+
+You can see them:
+
+```bash id="p62y1x"
+oc get clusterrole
+```
+
+You’ll find:
+
+```text id="0x29b3"
+admin
+edit
+view
+cluster-admin
+```
+
+These are called:
+
+```text id="qj2hwo"
+ClusterRoles
+```
+
+because they exist cluster-wide.
+
+---
+
+# Common Default Roles
+
+| Role            | Purpose                  |
+| --------------- | ------------------------ |
+| `view`          | Read-only access         |
+| `edit`          | Developer-level access   |
+| `admin`         | Namespace administration |
+| `cluster-admin` | Full cluster control     |
+
+---
+
+# What `edit` Role Usually Allows
+
+A user with `edit` can:
+
+* create deployments
+* create services
+* create pods
+* scale applications
+* view logs
+* update resources
+
+But typically CANNOT:
+
+* manage RBAC
+* create SCCs
+* control cluster-wide settings
+
+---
+
+# What Happens Internally
+
+When you run:
+
+```bash id="jlwmg0"
+oc policy add-role-to-user edit john -n dev-team
+```
+
+OpenShift creates something like:
+
+```yaml id="jlwmg1"
+kind: RoleBinding
+```
+
+which binds:
+
+```text id="jlwmg2"
+User john
+        ↓
+ClusterRole edit
+        ↓
+Namespace dev-team
+```
+
+The role itself already exists.
+
+---
+
+# When Do We Create Custom Roles?
+
+Only when built-in roles are insufficient.
+
+Example:
+
+* allow pod restart only
+* allow configmap access only
+* deny secrets
+* read-only to specific resources
+
+Then admins create:
+
+* custom Role
+* custom ClusterRole
+
+Example:
+
+```yaml id="jlwmg3"
+kind: Role
+```
+
+or:
+
+```yaml id="jlwmg4"
+kind: ClusterRole
+```
+
+---
+
+# Real Enterprise Practice
+
+Most organizations mainly use:
+
+* built-in roles
+* LDAP/AD groups
+* RoleBindings
+
+because:
+
+* easier
+* standardized
+* secure
+* simpler audits
+
+Custom roles are usually created only for special requirements.
+
+---
+
+# Very Important Interview Point
+
+## Difference Between Role and RoleBinding
+
+| Object             | Purpose                             |
+| ------------------ | ----------------------------------- |
+| Role / ClusterRole | Defines permissions                 |
+| RoleBinding        | Assigns permissions to users/groups |
+
+---
+
+# Difference Between Role and ClusterRole
+
+| Role                    | ClusterRole           |
+| ----------------------- | --------------------- |
+| Namespace-scoped        | Cluster-wide          |
+| Exists in one namespace | Exists across cluster |
+
+Built-in roles like:
+
+* edit
+* view
+* admin
+
+are usually ClusterRoles reused via RoleBindings.
+
+
+---
