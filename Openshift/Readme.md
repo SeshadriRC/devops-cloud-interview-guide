@@ -1,4 +1,4 @@
 ## Daily Activities
 
 - Chaos testing
-- Namespace creation
+- Namespace creation and deletion
