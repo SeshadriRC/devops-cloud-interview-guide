@@ -1,3 +1,5 @@
+```yaml
+
 ---
 # Playbook name
 - name: Install Apache HTTP Server
@@ -37,3 +39,5 @@
 
         # Enable service during boot
         enabled: yes
+
+```
