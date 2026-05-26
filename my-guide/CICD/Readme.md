@@ -1,5 +1,7 @@
 **1. Can you explain now what exactly your or how exactly your CI/CD pipeline looks like and what are the different stages that are involved what is your end goal ?**
 
+- [also refer this](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/my-guide/CICD/3-interview-ques.md)
+
 ### CI/CD Pipeline Summary
 
 * Using GitHub Actions for Continuous Integration (CI) and Argo CD for Continuous Deployment (CD)
