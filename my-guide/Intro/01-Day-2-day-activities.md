@@ -1,4 +1,27 @@
 
+**1. Tell me about yourself**
+
+
+- I have around 5 years of experience in IT as a DevOps and Platform Engineer. I started my career at Accenture.
+
+- In our projects, we follow Agile methodology, and we use Jira to track user stories, tasks, change requests, and production issues.
+
+- My day-to-day work includes infrastructure automation and configuration management using tools like Terraform and Ansible in cloud environments as per applciation team needs. I also work on deploying and managing containerized applications on Kubernetes/OpenShift platforms.
+
+- I was supporting 2 Devolopment team which has multiple microservices(6 member team, 15 to 20 microservices)
+
+- Currently, at Cognizant I am working as an OpenShift Platform Engineer, where I manage OpenShift clusters and handle platform administration activities. 
+Most of the cloud resources are provisioned through OpenShift operators and Helm-based automation. We also support application teams by troubleshooting issues related to resource provisioning, deployments, access management, and platform operations. This is what i do in my current organization
+
+---
+
+**2. How does your typical day-to-day life look like do you get requests from them every day or how exactly and what are the tasks that you work on ?**
+
+- yeah although development team creates the Jira tickets every day I don't directly work on those Jira tickets let me explain the flow once in 3 months that is beginning of the quarter development team myself from the DevOps engineering team QE manager stakeholders we all get onto a meeting called PI planning so we work in agile methodology in this PI planning **business analyst** and also the **product owner** they explain development team what are the priorities for this quarter and during this meeting development team development team lead all agree onto certain tasks that they will be working for next 3 months and this is where I get the direction as well
+- so during this meeting I understand what would be my priorities for the coming 3 months of course the priorities are provided for the 3 months but we work in sprints so every 3 weeks we have a sprint so I take items from the backlog during this PI planning tickets are also created for the DevOps engineering team according to the priority I take those tickets and in the sprint planning I take the work for the next 3 weeks so every day when I log in my priority would be to look at the sprint board or the scrum board and understand what are the activities that I need to deliver of course there are exceptions sometimes there are production issues development team need some infrastructure very urgent i discuss with my manager also if any stakeholder if required and if that activity has to be prioritized I dep prioritize one of the item in the sprint and I take up that activity kind of activities are you know very devopscentric for example as I told you there are 15 microservices as they keep updating these microservices we have new infrastructure requirements it can be requirement for RDS on AWS or setting setting up a volume in Kubernetes setting up the storage class for it deploying these microservices onto Kubernetes
+
+
+---
 
 **Tell me about the project in your current organization**
 
