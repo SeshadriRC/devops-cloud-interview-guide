@@ -1,4 +1,4 @@
-## What is the Rollback Strategy You Follow in Your Organization?
+<img width="1362" height="807" alt="image" src="https://github.com/user-attachments/assets/07bf0930-b211-497a-9af2-06afcddbe8d3" />## What is the Rollback Strategy You Follow in Your Organization?
 
 ### Question  
 Explain how your team handles rollbacks when a deployment goes wrong. What mechanisms or tools are in place to revert a release safely?
@@ -96,4 +96,84 @@ helm rollback my-app 2
 
 ---
 
+# Summarize
+
 <img width="1345" height="827" alt="image" src="https://github.com/user-attachments/assets/7312f25e-4e8e-4274-9db3-c22ae2f65b91" />
+
+
+### Rollback Strategy in DevOps – Summary
+
+A rollback strategy is used to quickly restore the previous stable application version if a production issue occurs after deployment.
+
+---
+
+## First Line of Defense: Deployment Strategy
+
+Before rollback, organizations try to minimize risk using:
+
+* Canary Deployment
+
+Example:
+
+```text id="nupq4k"
+10% users → New version
+90% users → Old version
+```
+
+Traffic is gradually increased:
+
+```text id="u77wzc"
+10% → 20% → 50% → 100%
+```
+
+This helps detect issues early before affecting all users.
+
+---
+
+## Rollback Process
+
+If a major production issue still occurs:
+
+### 1. Revert to Previous Version
+
+Because the organization follows:
+
+* GitOps approach
+
+all Kubernetes resources are stored in Git:
+
+* Helm charts
+* Deployments
+* ConfigMaps
+* Secrets
+
+Rollback is done by:
+
+* Reverting the Helm chart or manifests to the previous stable version in Git
+
+---
+
+### 2. Argo CD Detects Changes
+
+Argo CD continuously watches the Git repository.
+
+When the rollback commit is pushed:
+
+* Argo CD automatically detects the old version
+* Syncs it back to the Kubernetes cluster
+
+---
+
+## Result
+
+The application is restored to the previously stable release automatically.
+
+---
+
+## Easy Interview Answer
+
+> “In our organization we primarily avoid production issues using Canary Deployment. However, if rollback is required, we follow a GitOps-based rollback strategy. Since all Kubernetes manifests and Helm charts are stored in Git, we revert the Helm chart to the previous stable version. Argo CD monitors the repository and automatically syncs the old version back to the Kubernetes cluster.”
+
+
+---
+
