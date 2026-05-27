@@ -81,3 +81,116 @@ When a user accesses the service at `my-app.default.svc.cluster.local:80`, here'
 ### Key takeaway
 
 > "Kubernetes Services define what to expose — kube-proxy makes it happen by programming networking rules that forward service traffic to healthy pods."
+
+
+---
+
+<img width="1750" height="899" alt="image" src="https://github.com/user-attachments/assets/9369f1a5-0bbf-410b-82ca-81311017efd1" />
+
+
+### How Kubernetes Services Work with kube-proxy – Summary
+
+## Main Purpose of Kubernetes Service
+
+Kubernetes Services provide:
+
+* **Service Discovery**
+* Stable communication between pods
+
+Because pods are **ephemeral**, their IPs can change after restart.
+
+Instead of:
+
+```text id="yhjz4d"
+Pod-A → Pod-B IP
+```
+
+Kubernetes uses:
+
+```text id="qjsdwd"
+Pod-A → Service → Pod-B
+```
+
+The Service identifies pods using:
+
+* Labels
+* Selectors
+
+---
+
+## What Happens Internally
+
+### Step 1: Service Selects Pods
+
+A Service uses selectors to identify matching pods.
+
+Example:
+
+```yaml id="4l5vot"
+selector:
+  app: backend
+```
+
+---
+
+### Step 2: Kubernetes Creates Endpoints
+
+Kubernetes automatically creates an **Endpoint** object containing:
+
+* Pod IPs
+* Pod replica details
+
+---
+
+### Step 3: kube-proxy Reads Endpoints
+
+`kube-proxy` watches these endpoints continuously.
+
+---
+
+### Step 4: kube-proxy Updates iptables
+
+kube-proxy updates Linux networking rules (`iptables`) with logic like:
+
+```text id="d4r6ub"
+If traffic comes to Service IP →
+Forward it to backend pod replicas
+```
+
+
+### Step 5: Traffic Gets Routed
+
+When a pod accesses the Service IP:
+
+```text id="e7lt32"
+Pod → Service IP → iptables → Backend Pods
+```
+
+Traffic is automatically routed to healthy pod replicas.
+
+---
+
+## Important Understanding
+
+### Service itself does NOT:
+
+* Directly route traffic
+* Perform networking
+* Act as a real load balancer
+
+### Service mainly:
+
+* Selects pods
+* Provides stable virtual IP/DNS
+
+### Actual routing is handled by:
+
+* kube-proxy
+* iptables (or IPVS)
+
+
+## Easy Interview Answer
+
+> “Kubernetes Services and kube-proxy work together to enable pod communication. A Service uses labels and selectors to identify pods, and Kubernetes creates endpoints containing pod IPs. kube-proxy watches these endpoints and updates iptables rules so that traffic sent to the Service IP is automatically routed to the correct pod replicas.”
+
+---
