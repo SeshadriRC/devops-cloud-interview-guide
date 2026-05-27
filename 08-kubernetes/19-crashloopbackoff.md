@@ -111,3 +111,115 @@ You can inspect volumes, paths, env variables while the pod crashes repeatedly.
 ### Key takeaway  
 
 > `CrashLoopBackOff` means your container is repeatedly failing and restarting. The fix depends on identifying the **root cause via logs, events, configs, and resource usage** — not just restarting the pod.
+
+
+---
+
+# Summarize
+
+````md
+Pod is tracking cash flow back off. What will you do?
+
+So this is an interview question, which is typically a scenario based or real time interview question in Kubernetes.
+
+Pod can get into CrashLoopBackOff for multiple reasons.
+
+To be honest, CrashLoopBackOff is not an error.
+
+It is basically a state in Kubernetes, which means for some reason or some error, your pod is continuously crashing.
+
+So this state is called as CrashLoopBackOff.
+
+Now interviewer is asking:
+When pod is stuck in CrashLoopBackOff, what steps will you take?
+
+First of all, you need to understand why pod is in CrashLoopBackOff.
+
+So start telling the interviewer:
+
+- If pod goes into CrashLoopBackOff, the first thing that I’ll do is check the pod logs.
+- Basically:
+  
+  kubectl logs <pod-name>
+
+Or simply say:
+“I will look at the logs of the pod to understand if there is any error.”
+
+Maybe pod is crashing because:
+- Application is crashing
+- Java thread dump is generated
+- Stack dump is generated
+
+These logs can be shared with developers for troubleshooting.
+
+Second step:
+
+Run:
+
+kubectl describe pod <pod-name>
+
+This helps identify:
+- Restart reasons
+- Kubernetes events
+- Probe failures
+- Scheduling issues
+
+At times, `kubectl describe` itself clearly shows why the pod is continuously restarting.
+
+Another common reason:
+
+Liveness Probe failure.
+
+Maybe developer configured the wrong liveness probe endpoint.
+
+Example:
+
+Actual endpoint:
+  
+/health
+
+Configured endpoint:
+  
+/healthz
+
+In such cases, Kubernetes thinks the application is unhealthy and continuously restarts the pod.
+
+Example pod YAML:
+
+```yaml
+livenessProbe:
+  httpGet:
+    path: /healthz
+    port: 8080
+
+
+Sometimes:
+
+* Shell script inside liveness probe fails
+* Timeout values are incorrect
+* Startup delay is insufficient
+
+So always verify:
+
+* Liveness probe
+* Readiness probe
+* Startup probe configuration
+
+Common troubleshooting flow:
+
+1. Check pod logs
+2. Describe the pod
+3. Verify liveness/readiness probes
+4. Check resource issues
+5. Verify application configuration
+6. Identify root cause
+7. Fix the issue
+
+Easy interview answer:
+
+“If a pod goes into CrashLoopBackOff, first I check the pod logs to identify application errors. Then I use `kubectl describe pod` to inspect events and restart reasons. I also verify liveness and readiness probe configurations because incorrect probes commonly cause continuous pod restarts. After identifying the root cause, I proceed with the required fix.”
+
+````
+
+
+---
