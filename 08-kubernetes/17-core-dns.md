@@ -1,5 +1,7 @@
 ## Role of CoreDNS in Kubernetes
 
+
+
 ### Question  
 What is the role of **CoreDNS** in a Kubernetes cluster? Why is it important?
 
@@ -85,5 +87,86 @@ data:
 | **Service-to-service communication** | `curl http://orders.default.svc.cluster.local`                         |
 | **StatefulSet communication**    | `mysql-0.my-db.default.svc.cluster.local`                              |
 | **Pod discovery in custom DNS zones** | Extending CoreDNS with plugins for external name resolution            |
+
+---
+
+# Summary
+
+- What actually happens? Google.com is translated to IP address of Google which is like 8.8.8.8. And your request is actually sent to this IP address.
+
+- Who is taking care of this DNS server? Typically on your home network you have internet service provider, and internet service provider has a DNS server which maintains these records.
+
+- And when you type google.com it is resolved to the IP address. Now someone needs to perform the same thing in Kubernetes as well.
+
+<img width="1309" height="662" alt="image" src="https://github.com/user-attachments/assets/98d5261d-9f42-446d-ad6c-944a3c889130" />
+
+
+### Role of CoreDNS in Kubernetes – Summary
+
+CoreDNS is the default DNS server in Kubernetes.
+
+Its main role is:
+
+> Translating Kubernetes service names into IP addresses.
+
+---
+
+## Why CoreDNS Is Needed
+
+Applications inside Kubernetes usually communicate using:
+
+* Service DNS names
+* Not direct IP addresses
+
+Example:
+
+```text id="skdkqe"
+payments.default.svc.cluster.local
+```
+
+Pods use this DNS name to communicate with the payment service.
+
+---
+
+## What CoreDNS Does
+
+When a pod sends a request to:
+
+```text id="jz7hy0"
+payments.default.svc.cluster.local
+```
+
+CoreDNS resolves it to the Service IP:
+
+```text id="73w30j"
+10.x.x.x
+```
+
+Then traffic is routed to the correct service/pods.
+
+
+## Communication Flow
+
+```text id="0zl6gn"
+Pod → Service DNS Name → CoreDNS → Service IP
+```
+
+## Important Use Cases
+
+CoreDNS enables:
+
+* Service discovery
+* Pod-to-service communication
+* DNS resolution inside cluster
+
+Without CoreDNS:
+
+* Pods would need hardcoded IP addresses
+* Communication would break when IPs change
+
+
+## Easy Interview Answer
+
+> “CoreDNS is the default DNS server in Kubernetes. It is responsible for resolving Kubernetes service DNS names into IP addresses, enabling communication between pods and services inside the cluster.”
 
 ---
