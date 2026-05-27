@@ -137,3 +137,130 @@ Use case:
 ### Key takeaway
 
 > "Choose the service type based on how and where your application needs to be accessed — internal-only, via a node, public cloud, or external system."
+
+
+---
+# Summarize
+
+
+<img width="1522" height="749" alt="image" src="https://github.com/user-attachments/assets/e33c8b79-27c4-484a-8b84-fb6b803adf9d" />
+
+
+### Types of Services in Kubernetes – Summary
+
+Kubernetes Services define how applications are accessed inside or outside the cluster.
+
+Main service types:
+
+---
+
+## 1. ClusterIP (Default)
+
+* Accessible **only inside the Kubernetes cluster**
+* Used for internal communication between pods/services
+* Accessed using:
+
+  * Service DNS name
+  * Cluster IP
+
+Example:
+
+```text id="akv8g5"
+Frontend Pod → Backend Service
+```
+
+Best for:
+
+* Internal microservice communication
+
+---
+
+## 2. NodePort
+
+* Exposes application on a port of every Kubernetes node
+* Accessed using:
+
+```text id="owp8mn"
+<NodeIP>:<NodePort>
+```
+
+Anyone with access to the node network/VPC can access it.
+
+Best for:
+
+* Testing
+* Simple external access
+
+---
+
+## 3. LoadBalancer
+
+* Creates an external cloud load balancer
+* Provides public/external access to applications
+* Client traffic flows like:
+
+```text id="r6wnzm"
+Client → Load Balancer → Service → Pods
+```
+
+Works only on cloud environments with a:
+
+* Cloud Controller Manager
+
+Examples:
+
+* AWS EKS
+* Azure AKS
+* Google GKE
+
+Not fully supported in:
+
+* Minikube
+* Kind
+
+---
+
+## 4. ExternalName
+
+* Maps a Kubernetes Service to an external DNS name
+* No actual proxy/load balancing created
+
+Example:
+
+```text id="vx2uh5"
+db-service → external-db.company.com
+```
+
+Used for:
+
+* Connecting Kubernetes apps to external systems
+
+---
+
+## 5. Headless Service
+
+Created using:
+
+```yaml id="huq3s8"
+clusterIP: None
+```
+
+Features:
+
+* No load balancing
+* Creates DNS records for each pod
+* Mainly used with StatefulSets and databases
+
+Best for:
+
+* PostgreSQL
+* MongoDB
+* Kafka
+* Redis clusters
+
+
+## Easy Interview Definition
+
+> “Kubernetes supports multiple service types such as ClusterIP, NodePort, LoadBalancer, ExternalName, and Headless Service. These service types mainly define how applications are exposed and accessed inside or outside the Kubernetes cluster.”
+
+
