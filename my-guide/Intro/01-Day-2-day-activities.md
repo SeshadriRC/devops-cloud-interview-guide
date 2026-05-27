@@ -2,16 +2,13 @@
 **1. Tell me about yourself**
 
 
-- I have around 5 years of experience in IT as a DevOps and Platform Engineer. I started my career at Accenture.
-
+- I have around 5 years of experience in IT as a DevOps and Platform Engineer.
+- I was supporting 2 Devolopment team where they have multiple microservices(6 member team, 15 to 20 microservices)
+- My day-to-day work includes infrastructure automation and configuration management using tools like Terraform and Ansible in cloud environments as per applciation team needs. I work on deploying and managing containerized applications on Kubernetes/OpenShift platforms.
 - In our projects, we follow Agile methodology, and we use Jira to track user stories, tasks, change requests, and production issues.
-
-- My day-to-day work includes infrastructure automation and configuration management using tools like Terraform and Ansible in cloud environments as per applciation team needs. I also work on deploying and managing containerized applications on Kubernetes/OpenShift platforms.
-
-- I was supporting 2 Devolopment team which has multiple microservices(6 member team, 15 to 20 microservices)
-
-- Currently, at Cognizant I am working as an OpenShift Platform Engineer, where I manage OpenShift clusters and handle platform administration activities. 
-Most of the cloud resources are provisioned through OpenShift operators and Helm-based automation. We also support application teams by troubleshooting issues related to resource provisioning, deployments, access management, and platform operations. This is what i do in my current organization
+- Currently, at Cognizant I am working as an OpenShift Platform Engineer, where I manage OpenShift clusters and handle platform administration activities.
+- In my previous organization i worked as a Openshift  platform Engineer.
+- Most of the cloud resources are provisioned through OpenShift operators and Helm-based automation. We also support application teams by troubleshooting issues related to resource provisioning, deployments, access management, and platform operations. This is what i do in my current organization
 
 ---
 
