@@ -78,3 +78,82 @@ But this is brittle; IPs can change if the Service is recreated.
 ### Key takeaway  
 
 > "Inter-namespace networking works out-of-the-box in Kubernetes. Just use the FQDN `<service>.<namespace>.svc.cluster.local`. Restrict it only when needed with NetworkPolicies."
+
+---
+
+# Summarize
+
+<img width="774" height="339" alt="image" src="https://github.com/user-attachments/assets/21f49456-2013-43f2-9c8e-3c641665f8c0" />
+
+
+### Can a Pod Access a Service in a Different Namespace? – Summary
+
+Yes. In Kubernetes, a pod can access a Service in another namespace by default.
+
+---
+
+## Why It Works
+
+Most Kubernetes Services are of type:
+
+```text id="v4p8w9"
+ClusterIP
+```
+
+ClusterIP Services are accessible:
+
+* Anywhere inside the Kubernetes cluster
+* Across namespaces
+
+So pods do not need to be in the same namespace to communicate.
+
+---
+
+## How to Access the Service
+
+Use the Service DNS format:
+
+```text id="9tw6tt"
+<service-name>.<namespace>.svc.cluster.local
+```
+
+Example:
+
+```text id="1o0q7k"
+myservice.backend.svc.cluster.local
+```
+
+Where:
+
+* `myservice` → Service name
+* `backend` → Namespace name
+
+
+
+## Important Note
+
+You can also use:
+
+* ClusterIP directly
+
+But using DNS name is the recommended and best practice.
+
+
+
+## Exception
+
+Cross-namespace communication may fail if:
+
+* Network Policies
+* Security restrictions
+
+are configured to block traffic.
+
+
+
+## Easy Interview Answer
+
+> “Yes, a pod can access a Service in a different namespace because ClusterIP Services are accessible throughout the Kubernetes cluster. The service can be accessed using its DNS name in the format `<service-name>.<namespace>.svc.cluster.local`.”
+
+
+---
