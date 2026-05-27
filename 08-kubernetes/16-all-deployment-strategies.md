@@ -42,7 +42,7 @@ strategy:
 
 #### Why:
 - Simple to manage.
-- Works well when monitoring is in place and rollback is quick (via GitOps).
+- Works well when monitoring is in place and rollback is quick (via GitOps). refer the [rollback](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/my-guide/Kubernetes/Concepts/rolling-update-rollback.md) doc
 
 ---
 
