@@ -84,3 +84,103 @@ Use these metrics in **Argo Rollouts** or **CI pipelines** to auto-pause or fail
 ### Key takeaway  
 
 > “Avoiding rollbacks means investing in **quality control, progressive rollout, and observability** before production. Treat deployment as a gradual, monitored process — not a one-shot push.”
+
+
+---
+
+# Summarize
+
+<img width="922" height="420" alt="image" src="https://github.com/user-attachments/assets/0bd2b376-422a-4c26-b014-7b0e5cac940a" />
+
+
+### Designing a Solution to Avoid Rollbacks – Summary
+
+The interviewer is indirectly asking about:
+
+> Deployment strategies used to minimize production failures and avoid rollbacks.
+
+---
+
+## Main Solution: Controlled Deployment Strategy
+
+Organizations commonly use:
+
+* Canary Deployment
+* Blue-Green Deployment
+
+to reduce production risk.
+
+---
+
+## Canary Deployment Approach
+
+Instead of releasing the new version to all users:
+
+```text id="h5r9v2"
+10% users → New version
+90% users → Old version
+```
+
+Then traffic is gradually increased:
+
+```text id="myb7v5"
+10% → 20% → 50% → 100%
+```
+
+This helps:
+
+* Detect issues early
+* Limit impact to a small user group
+* Reduce chances of full rollback
+
+
+## Additional Validation
+
+Before increasing traffic:
+
+* Load testing
+* Performance testing
+* Monitoring
+* User feedback
+
+are performed at each stage.
+
+This gives confidence before full production rollout.
+
+
+## Industry Practice
+
+Large companies like:
+
+* Uber
+* Amazon
+
+also use phased rollout strategies to reduce production risks.
+
+
+## If Rollback Is Still Needed
+
+Sometimes issues may still occur:
+
+* Hidden bugs
+* Security vulnerabilities
+* Unidentified edge cases
+
+In such cases:
+
+* GitOps rollback is performed
+
+Using:
+
+* Previous Helm chart version
+* Previous Kubernetes manifests stored in Git
+
+Argo CD automatically detects the reverted version and redeploys it to the cluster.
+
+
+## Easy Interview Answer
+
+> “To avoid rollbacks, we follow Canary Deployment strategy where the new application version is gradually released to a small percentage of users first. We monitor logs, performance, and run load tests before increasing traffic to 20%, 50%, and finally 100%. This helps identify issues early and minimizes production impact. If rollback is still required, we follow a GitOps-based rollback process using Helm charts and Argo CD.”
+
+
+---
