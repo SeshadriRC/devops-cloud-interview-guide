@@ -76,4 +76,105 @@ spec:
 
 ### Key takeaway  
 
-> "Use a NetworkPolicy to _select_ the database pods and _allow_ ingress only from the intended app’s label. This whitelists traffic inside the namespace and blocks everything else by default."
+> "Use a NetworkPolicy to _select_ the database pods and _allow_ ingress only from the intended app’s label. This whitelists traffic inside the namespace and blocks everything else by default.
+
+
+--- 
+
+# Summarize 
+
+### Scenario Summary – Restrict DB Access to Only One Application in Kubernetes
+
+The interview question is asking how to allow:
+
+* Only one pod/application to access a database pod
+* While blocking all other pods in the same namespace
+
+---
+
+## Kubernetes Concept Used
+
+This is achieved using:
+
+```text id="m04c1u"
+Network Policies
+```
+
+Network Policies control:
+
+* Pod-to-pod communication
+* Allowed and blocked network traffic
+
+---
+
+## Example Scenario
+
+Inside a namespace:
+
+```text id="t9j5pz"
+Pod-1  → Allowed to access MySQL DB
+Pod-2  → Blocked
+Pod-3  → Blocked
+```
+
+By default, all pods in a namespace can communicate.
+
+Network Policies are used to restrict this access.
+
+
+
+## Steps to Implement
+
+### 1. Label the DB Pod
+
+Example:
+
+```yaml id="s4ok9h"
+labels:
+  app: db
+```
+
+
+
+### 2. Label the Allowed Application Pod
+
+Example:
+
+```yaml id="3hvnx9"
+labels:
+  app: myapp
+```
+
+
+
+### 3. Create a NetworkPolicy
+
+The NetworkPolicy:
+
+* Applies to DB pod
+* Allows ingress traffic only from pods with label `app: myapp`
+
+This blocks all other pods automatically.
+
+
+
+## Important Concept
+
+The policy uses:
+
+* **Pod Selectors**
+* **Ingress Rules**
+
+to define:
+
+* Which pod is protected
+* Which pods are allowed access
+
+
+
+## Easy Interview Answer
+
+> “I would use Kubernetes Network Policies to restrict access to the database pod. First, I would label the DB pod and the allowed application pod. Then I would create a NetworkPolicy with ingress rules allowing traffic only from the required application pod while blocking access from other pods in the namespace.”
+
+
+---
