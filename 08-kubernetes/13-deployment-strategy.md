@@ -21,6 +21,8 @@ In our organization, we primarily follow the **Rolling Update strategy** using *
 
 This is the default strategy in Kubernetes Deployments:
 
+[maxSurge](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/my-guide/Kubernetes/Concepts/maxSurge.md)
+
 ```yaml
 strategy:
   type: RollingUpdate
