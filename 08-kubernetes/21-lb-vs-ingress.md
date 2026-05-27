@@ -94,3 +94,170 @@ spec:
 ### Key takeaway  
 
 > Use **LoadBalancer** for exposing a single service directly, and **Ingress** when you want smart routing, TLS, and cost efficiency with multiple services behind one entry point.
+
+---
+
+# Summary
+
+<img width="988" height="499" alt="image" src="https://github.com/user-attachments/assets/40d69d51-acbc-4a6f-9b61-dfe9b7488f0b" />
+
+````md id="uzg1r3"
+This is a classic Kubernetes interview question.
+
+# Difference Between Ingress and LoadBalancer Service Type
+
+Both:
+- Ingress
+- LoadBalancer Service Type
+
+are used to:
+- Expose applications to the external/public world
+
+However, there are major differences between them.
+
+---
+
+# LoadBalancer Service Type
+
+When you create a Service of type:
+
+```yaml
+type: LoadBalancer
+
+
+Kubernetes creates:
+
+* A dedicated external load balancer for that service
+
+Example on AWS:
+
+* One AWS Application Load Balancer (ALB) or Network Load Balancer (NLB) is created per service
+
+---
+
+## Problem with LoadBalancer Service Type
+
+If you expose multiple services:
+
+```text
+Service A → Load Balancer A
+Service B → Load Balancer B
+Service C → Load Balancer C
+```
+
+This causes:
+
+* High cloud cost
+* Resource overhead
+* Difficult management
+
+Also:
+
+* You have limited control over the created load balancer
+* Cloud Controller Manager decides load balancer creation
+
+---
+
+# Ingress
+
+Ingress also exposes applications externally.
+
+But instead of creating multiple load balancers:
+
+* One load balancer can handle multiple services
+
+Example:
+
+```text
+Single Load Balancer
+        ↓
+   Ingress Resource
+      ↓      ↓      ↓
+ ServiceA ServiceB ServiceC
+```
+
+This makes ingress:
+
+* Cost effective
+* Easier to manage
+
+---
+
+# Advantages of Ingress
+
+Ingress provides:
+
+* Advanced routing
+* Better customization
+* Shared load balancer usage
+
+---
+
+## Supported Routing Options
+
+Ingress supports:
+
+* Host-based routing
+* Path-based routing
+* Weight-based routing
+* Canary routing
+
+Examples:
+
+```text
+/api → Backend Service
+/admin → Admin Service
+```
+
+or
+
+```text
+app1.company.com → Service A
+app2.company.com → Service B
+```
+
+---
+
+# Ingress Controllers
+
+Ingress works through an Ingress Controller.
+
+Popular controllers:
+
+* NGINX Ingress Controller
+* Traefik
+* Envoy
+* HAProxy
+
+Depending on the controller:
+
+* Different load balancing features are available
+
+---
+
+# Key Differences
+
+| Feature             | LoadBalancer Service | Ingress                |
+| ------------------- | -------------------- | ---------------------- |
+| External Access     | Yes                  | Yes                    |
+| Load Balancer Count | One per service      | Shared                 |
+| Cost                | Expensive            | Cost effective         |
+| Routing Features    | Limited              | Advanced               |
+| Customization       | Less                 | High                   |
+| Traffic Rules       | Basic                | Host/Path/Weight based |
+
+---
+````
+
+# Easy Interview Answer
+
+“Both Ingress and LoadBalancer Service Type are used to expose Kubernetes applications externally.
+
+* LoadBalancer Service creates a separate external load balancer for each service, which can become expensive when multiple services are exposed.
+* Ingress allows multiple services to share a single load balancer and provides advanced routing features such as host-based, path-based, and weighted routing.
+
+Ingress is generally more cost effective and customizable compared to LoadBalancer Service Type.”
+
+
+
+---
