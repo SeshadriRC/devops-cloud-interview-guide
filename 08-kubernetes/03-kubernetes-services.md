@@ -99,3 +99,66 @@ This service will:
 ### Key takeaway
 
 > "Services in Kubernetes abstract away pod IP changes and provide a consistent way to communicate with workloads. They’re essential for both internal discovery and external exposure of applications."
+
+
+### Purpose of Services in Kubernetes – Summary
+
+A **Service** in Kubernetes is mainly used for:
+
+1. **Service Discovery**
+2. **Load Balancing**
+
+---
+
+## 1. Service Discovery
+
+Pods in Kubernetes are **ephemeral**:
+
+* They can restart anytime
+* Their IP addresses may change
+
+So Pod-A should not directly communicate with Pod-B using pod IPs.
+
+Instead:
+
+```text id="jlwmhg"
+Pod-A → Service → Pod-B
+```
+
+The Service acts as a **stable middle layer**.
+
+It identifies pods using:
+
+* **Labels**
+* **Selectors**
+
+Because of this, communication continues even if pod IPs change.
+
+
+## 2. Load Balancing
+
+If multiple pod replicas exist:
+
+```text id="guc11m"
+Service → Pod-1
+        → Pod-2
+        → Pod-3
+```
+
+The Service distributes requests across replicas.
+
+By default, Kubernetes uses a **round-robin style load balancing** approach.
+
+This improves:
+
+* Availability
+* Scalability
+* Traffic distribution
+
+
+## Easy Interview Definition
+
+> “A Kubernetes Service provides stable communication between pods through service discovery and load balancing. Since pods are ephemeral and their IPs can change, services use labels and selectors to route traffic to the correct pods. They also distribute requests across multiple pod replicas.”
+
+<img width="1123" height="796" alt="image" src="https://github.com/user-attachments/assets/52cda3a2-b40c-4fe2-890c-04a4d0f43ee4" />
+
