@@ -136,3 +136,206 @@ If using HTTPS, verify:
 ### Key takeaway  
 
 > If your app works via ClusterIP but not Ingress, the issue is often with the **Ingress configuration**, missing annotations, DNS setup, or **controller not handling the resource**.
+
+
+---
+
+<img width="1831" height="740" alt="image" src="https://github.com/user-attachments/assets/b33b9c14-0a72-4dc2-a5d0-dc2f543b05cf" />
+
+
+
+````md id="tnxj0x"
+# Scenario-Based Kubernetes Interview Question
+
+## Application Works with ClusterIP but Fails with Ingress — How Do You Troubleshoot?
+
+This is a common Kubernetes troubleshooting interview question.
+
+---
+
+# Scenario Understanding
+
+Suppose:
+
+- Application pod is running properly
+- Service of type `ClusterIP` is created
+- Internal communication within the cluster works perfectly
+
+Example:
+
+```text
+Pod → ClusterIP Service → Backend Pod ✅
+````
+
+But when external access is enabled using Ingress:
+
+```text
+Client → example.com → Ingress → Service → Pod ❌
+```
+
+Traffic fails.
+
+The interviewer asks:
+How would you troubleshoot this issue?
+
+---
+
+# Step 1 — Check if Ingress Controller Is Installed
+
+Creating only an Ingress resource is not enough.
+
+Ingress Controller is required because:
+
+* It watches Ingress resources
+* Configures load balancer/reverse proxy
+* Routes external traffic to services
+
+Examples:
+
+* NGINX Ingress Controller
+* Traefik
+* HAProxy
+* Envoy
+
+Check whether ingress controller pods are running.
+
+Example:
+
+```bash
+kubectl get pods -n ingress-nginx
+```
+
+---
+
+# Step 2 — Check Ingress Controller Logs
+
+If controller exists:
+
+* Check controller logs
+
+Purpose:
+
+* Verify whether ingress resource is detected
+* Identify configuration errors
+
+Example:
+
+```bash
+kubectl logs <ingress-controller-pod> -n ingress-nginx
+```
+
+Things to verify:
+
+* Is ingress resource being watched?
+* Any routing/configuration errors?
+* Any backend/service errors?
+
+---
+
+# Step 3 — Verify Ingress Class Name
+
+In clusters with multiple ingress controllers:
+
+* `ingressClassName` decides which controller handles the ingress
+
+Example:
+
+```yaml
+ingressClassName: nginx
+```
+
+If class name is missing or incorrect:
+
+* Ingress controller ignores the ingress resource
+
+Also ensure:
+
+* Same class exists in ingress controller configuration
+
+---
+
+# Step 4 — Verify Ingress Backend Configuration
+
+Sometimes ingress exists correctly, but backend service mapping is wrong.
+
+Check:
+
+* Service name
+* Service port
+* Namespace
+* Path configuration
+
+Example:
+
+```yaml
+backend:
+  service:
+    name: payment-service
+    port:
+      number: 80
+```
+
+Common mistakes:
+
+* Wrong service name
+* Wrong port number
+* Incorrect namespace
+* Invalid path rules
+
+---
+
+# Step 5 — Verify Service and Endpoints
+
+Even though ClusterIP works:
+
+* Ensure ingress points to correct service
+
+Check:
+
+```bash
+kubectl get svc
+kubectl get endpoints
+```
+
+Verify:
+
+* Endpoints exist
+* Pods are attached correctly
+
+---
+
+# Step 6 — Verify DNS and Load Balancer
+
+If using external DNS like:
+
+```text
+example.com
+```
+
+Verify:
+
+* DNS resolves correctly
+* Load balancer IP/domain is correct
+* Security groups/firewalls allow traffic
+
+---
+
+# Common Root Causes
+
+Most ingress issues happen because of:
+
+* Missing ingress controller
+* Incorrect ingress class
+* Wrong backend service mapping
+* DNS issues
+* Invalid ingress rules
+
+---
+
+# Easy Interview Answer
+
+“If the application works through ClusterIP but fails through Ingress, first I check whether the Ingress Controller is installed and running. Then I inspect ingress controller logs to verify whether the ingress resource is detected correctly. I also verify the `ingressClassName`, backend service name, service port, and ingress rules. Finally, I check DNS resolution, load balancer configuration, and service endpoints to identify the root cause.”
+
+
+
+---
