@@ -92,3 +92,8 @@ helm rollback my-app 2
 ### Key takeaway  
 
 > "Our rollback strategy relies on GitOps principles — reverting Git changes triggers clean, trackable rollbacks. For high-risk deployments, we combine this with automated checks and canary monitoring to catch regressions early."
+
+
+---
+
+<img width="1345" height="827" alt="image" src="https://github.com/user-attachments/assets/7312f25e-4e8e-4274-9db3-c22ae2f65b91" />
