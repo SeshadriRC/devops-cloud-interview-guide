@@ -97,3 +97,111 @@ Downsides: resource-heavy, more infra complexity.
 ### Key takeaway  
 
 > "We follow a **Rolling Update** strategy for general use, and **Canary deployments** for critical services. We choose deployment patterns based on service criticality, risk profile, and observability tooling."
+
+
+---
+
+# Summarize
+
+### Deployment Strategy in DevOps – Summary
+
+Deployment strategy defines:
+
+> How a new application version is safely released to production users.
+
+This is important because:
+
+* Bugs may still exist even after Dev/Staging testing
+* Directly releasing to all users can impact millions of users
+
+Large companies use controlled rollout strategies to reduce risk.
+
+---
+
+## Common Deployment Strategies
+
+Popular strategies include:
+
+* Canary Deployment
+* Blue-Green Deployment
+
+---
+
+## Canary Deployment (Most Common)
+
+<img width="1604" height="713" alt="image" src="https://github.com/user-attachments/assets/7ab7004e-a0cd-4549-9841-b3ddc0cd5d97" />
+
+
+In Canary deployment:
+
+* New version is released to a small percentage of users first
+* Remaining users continue using the old version
+
+Example:
+
+```text id="l7vh8d"
+10% users → New version
+90% users → Old version
+```
+
+After monitoring:
+
+* Logs
+* Performance
+* Errors
+* User feedback
+
+traffic is gradually increased:
+
+```text id="0b0ht8"
+10% → 20% → 50% → 100%
+```
+
+Once stable:
+
+* Old version is removed
+
+
+## How It Is Implemented in Kubernetes
+
+Typically:
+
+* Old application has existing:
+
+  * Ingress
+  * Service
+  * Pods
+
+For new version:
+
+* Create new:
+
+  * Ingress
+  * Service
+  * Pods
+
+Ingress annotations are configured so:
+
+* Small percentage of traffic goes to new version
+* Remaining traffic goes to old version
+
+Ingress Controller updates the load balancer accordingly.
+
+
+
+## Traffic Flow Example
+
+```text id="r2w8d5"
+90% traffic → Old app
+10% traffic → New app
+```
+
+Gradually all traffic is shifted to the new application.
+
+
+
+## Easy Interview Answer
+
+> “In our organization we follow Canary Deployment strategy. We initially release the new application version to a small percentage of users, such as 10%, while the remaining users continue using the old version. After monitoring application health and performance, traffic is gradually increased to 20%, 50%, and finally 100%. In Kubernetes, this is implemented using separate ingress, service, and pod resources for the new version, with ingress annotations controlling traffic distribution.”
+
+---
