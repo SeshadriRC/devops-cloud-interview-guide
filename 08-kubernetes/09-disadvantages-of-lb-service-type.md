@@ -93,3 +93,97 @@ For more flexibility:
 ### Key takeaway
 
 > "LoadBalancer is easy and direct but becomes expensive and rigid as your services grow. It’s great for simple setups, but for scalable production environments — pair it with Ingress."
+
+
+---
+
+# Summarize
+
+### Disadvantages of LoadBalancer Service Type – Summary
+
+A Kubernetes Service of type **LoadBalancer** exposes applications externally by creating a cloud load balancer.
+
+Example:
+
+* In Amazon Web Services Amazon EKS, creating a LoadBalancer service can automatically provision an Application Load Balancer (ALB) or Network Load Balancer (NLB).
+
+---
+
+## Main Disadvantages
+
+### 1. High Cost
+
+Each LoadBalancer Service creates:
+
+* A separate external IP
+* A separate cloud load balancer
+
+Example:
+
+```text id="jlwmmu"
+10 services → 10 external load balancers
+```
+
+This becomes:
+
+* Expensive
+* Resource inefficient
+
+Especially in cloud environments.
+
+---
+
+## 2. Not Easily Reusable
+
+Load balancers are generally:
+
+* Not shared automatically between services
+* Created independently for each service
+
+For multiple applications, this is inefficient.
+
+That’s why Kubernetes commonly uses:
+
+* Ingress
+* Gateway API
+
+to share one load balancer across many services.
+
+---
+
+## 3. Cloud Dependency
+
+LoadBalancer Service works only if the cluster has:
+
+* Cloud Controller Manager (CCM)
+
+The CCM is responsible for creating external load balancers.
+
+Supported mainly in cloud providers like:
+
+* Amazon Web Services
+* Microsoft Azure
+* Google Cloud
+
+It may not work properly in:
+
+* On-premises Kubernetes
+* Local clusters like Minikube or Kind
+
+
+## When It Is Okay to Use
+
+LoadBalancer Service is fine when:
+
+* Only one or few services need internet exposure
+* Simpler setup is preferred
+* Advanced routing is not required
+
+
+
+## Easy Interview Answer
+
+> “The main disadvantage of Kubernetes LoadBalancer Service is that it creates a separate external load balancer for each service, which increases cloud cost and resource usage. It also depends on cloud provider integrations like Cloud Controller Manager, so it may not work properly in all Kubernetes environments.”
+
+
+---
