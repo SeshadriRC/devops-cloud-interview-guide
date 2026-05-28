@@ -94,3 +94,129 @@ This pod will only be scheduled on nodes labeled with `disktype=ssd`.
 ### Key takeaway
 
 > **Node Affinity** gives you fine-grained control over where your pods are scheduled — based on node labels. Use it to improve performance, availability, and compliance by matching the right workload to the right node.
+
+
+---
+
+# Summary
+
+
+<img width="1664" height="717" alt="image" src="https://github.com/user-attachments/assets/3c2a6edc-fa8f-4628-98e2-66ea8112d302" />
+
+## Explain the Concept of Node Affinity
+
+This is a very common Kubernetes interview question, and this is a clean way to explain it.
+
+In Kubernetes, **Node Affinity** is a feature used to influence **Pod scheduling**.
+It tells Kubernetes on which nodes a Pod should run, based on the **labels assigned to nodes**.
+
+You can explain it like this in an interview:
+
+> “Node affinity is a modern and more flexible version of nodeSelector. It allows Pods to be scheduled on specific nodes based on node labels.”
+
+### Example Scenario
+
+Suppose your Kubernetes cluster has 3 nodes:
+
+* 2 CPU-based nodes
+* 1 GPU-based node
+
+Now imagine you are deploying an AI/ML workload that requires GPU resources.
+You want that Pod to run only on the GPU node.
+
+This is where **Node Affinity** is used.
+
+You first assign a label to the GPU node, for example:
+
+```bash
+hardware=gpu
+```
+
+Then in the Pod definition, you configure node affinity so Kubernetes schedules the Pod only on nodes with that label.
+
+---
+
+# Types of Node Affinity
+
+There are mainly two types:
+
+## 1. RequiredDuringSchedulingIgnoredDuringExecution
+
+This is a **hard rule**.
+
+It means:
+
+* The Pod **must** be scheduled only on nodes matching the label.
+* If no matching node exists, the Pod will remain in **Pending** state.
+
+Example use case:
+
+* AI/ML workloads that strictly require GPU nodes.
+
+You can explain it like this:
+
+> “This acts like a mandatory condition for scheduling.”
+
+---
+
+## 2. PreferredDuringSchedulingIgnoredDuringExecution
+
+This is a **soft rule**.
+
+It means:
+
+* Kubernetes will try to place the Pod on the preferred node.
+* But if the matching node is unavailable, it can still schedule the Pod on another node.
+
+Example use case:
+
+* GPU node is preferred, but not compulsory.
+
+You can explain it like this:
+
+> “This is more like a best-effort preference.”
+
+---
+
+# Where Do We Configure Node Affinity?
+
+Node affinity is configured inside the **Pod spec** under:
+
+```yaml
+spec:
+  affinity:
+    nodeAffinity:
+```
+
+Example structure:
+
+```yaml
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: hardware
+            operator: In
+            values:
+            - gpu
+```
+
+Here:
+
+* `key` → Node label key
+* `values` → Expected label value
+
+This works similarly to how a Service selects Pods using labels.
+
+---
+
+# Interview Summary Answer
+
+If asked in an interview, you can summarize like this:
+
+> “Node affinity is a Kubernetes feature used to control Pod scheduling based on node labels. It is a more flexible version of nodeSelector. Using node affinity, a Pod can specify whether a node requirement is mandatory using `requiredDuringSchedulingIgnoredDuringExecution` or preferred using `preferredDuringSchedulingIgnoredDuringExecution`.”
+
+---
+
