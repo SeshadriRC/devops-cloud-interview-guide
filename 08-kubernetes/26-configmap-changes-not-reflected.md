@@ -85,3 +85,7 @@ annotations:
 ### Key takeaway
 
 > When mounting ConfigMaps as volumes, changes are synced to the file system — but your app must re-read the files to reflect them. If it doesn’t, restart the pod or redeploy the workload.
+
+
+<img width="1879" height="857" alt="image" src="https://github.com/user-attachments/assets/852fbda7-7049-4e89-ad48-6bf54997eff5" />
+
