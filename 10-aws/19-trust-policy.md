@@ -1,5 +1,7 @@
 <img width="1401" height="657" alt="image" src="https://github.com/user-attachments/assets/8c04fee0-516f-4617-b283-dbf669d4c3b9" />
 
+<img width="1919" height="865" alt="image" src="https://github.com/user-attachments/assets/60592f74-273d-4758-856d-d0edd703aad3" />
+
 
 # What is a Trust Policy in AWS and Why Is It Used?
 
