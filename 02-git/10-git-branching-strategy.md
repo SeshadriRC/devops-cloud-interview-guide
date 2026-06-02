@@ -66,3 +66,221 @@ This helped us maintain stability while enabling parallel development and quick 
 > By following this branching strategy, we maintained agility without compromising stability — which is critical in both enterprise and open-source scale environments like Kubernetes.
 
 ---
+
+# What Is Your Branching Strategy?
+
+This is one of the interviewer's favorite Git questions because it helps them understand:
+
+* Your knowledge of Git version control
+* Your involvement in development workflows
+* Your experience with release management
+* How your team collaborates and delivers software
+
+Although there are standard branching models such as:
+
+* Git Flow
+* GitHub Flow
+* GitLab Flow
+* Trunk-Based Development
+
+it is usually better to explain the branching strategy actually followed by your team rather than simply reciting a textbook framework.
+
+---
+
+# Our Branching Strategy
+
+We use a branching model inspired by **Trunk-Based Development** with the following branches:
+
+```text
+Main Branch
+    │
+    ├── Feature Branches
+    │
+    ├── Release Branch
+    │
+    └── Hotfix Branch
+```
+
+---
+
+# 1. Main Branch
+
+The **main** branch always contains the latest integrated code.
+
+* Every repository starts with a main branch.
+* Developers regularly merge completed work into the main branch.
+* The main branch serves as the source for releases.
+
+```text
+main
+```
+
+Key points:
+
+* Latest stable code is available here.
+* Acts as the central integration branch.
+* Source for creating release branches.
+
+---
+
+# 2. Feature Branches
+
+Whenever developers need to work on a new feature that:
+
+* Requires significant effort
+* Takes a longer duration
+* Needs collaboration among multiple developers
+
+we create a dedicated feature branch.
+
+```text
+main
+ ├── feature-user-auth
+ ├── feature-payment
+ └── feature-reporting
+```
+
+Characteristics:
+
+* Multiple feature branches can exist simultaneously.
+* Developers work independently without affecting the main branch.
+* Once development and validation are complete, changes are merged back into the main branch.
+
+---
+
+# 3. Release Branch
+
+We follow a release cycle every two months.
+
+When all completed features are merged into the main branch, we create a release branch.
+
+```text
+main
+   │
+   └── release-v1.0
+```
+
+Purpose of the release branch:
+
+* Code Freeze begins.
+* QA engineers perform:
+
+  * Functional testing
+  * Regression testing
+  * Smoke testing
+  * UAT validation
+
+If testing succeeds:
+
+```bash
+git tag v1.0
+```
+
+A release is then generated from that tag and deployed.
+
+---
+
+# Release Flow
+
+```text
+Feature Branches
+        │
+        ▼
+      Main
+        │
+        ▼
+ Release Branch
+        │
+        ▼
+       Tag
+        │
+        ▼
+   Production
+```
+
+---
+
+# 4. Hotfix Branch
+
+Sometimes issues occur in production after deployment.
+
+In such cases, we create a hotfix branch directly from the release branch.
+
+```text
+release-v1.0
+      │
+      └── hotfix-v1.0.1
+```
+
+Developers implement the fix immediately.
+
+After validation:
+
+```bash
+git tag v1.0.1
+```
+
+The fix is released to production as quickly as possible.
+
+---
+
+# Post-Hotfix Activities
+
+After deploying the hotfix:
+
+1. Merge the hotfix back into the release branch.
+2. Merge the hotfix into the main branch.
+3. Inform teams working on feature branches to pull the latest changes.
+
+```text
+Hotfix Branch
+      │
+      ├── Release Branch
+      │
+      └── Main Branch
+```
+
+This prevents future releases from missing the production fix.
+
+---
+
+# Complete Branching Structure
+
+```text
+                         ┌─────────────┐
+                         │    Main     │
+                         └──────┬──────┘
+                                │
+           ┌────────────────────┼────────────────────┐
+           │                    │                    │
+           ▼                    ▼                    ▼
+    Feature-A            Feature-B            Feature-C
+
+                                │
+                                ▼
+                        Release Branch
+                                │
+                                ▼
+                               Tag
+                                │
+                                ▼
+                           Production
+                                │
+                                ▼
+                          Hotfix Branch
+                                │
+                 ┌──────────────┴──────────────┐
+                 ▼                             ▼
+             Release                       Main
+```
+
+---
+
+# Interview Answer (Short Version)
+
+> We follow a branching strategy inspired by trunk-based development. The main branch contains the latest integrated code. Developers work on separate feature branches and merge completed features into the main branch. Every two months, we create a release branch for QA testing and generate production releases using tags. If production issues occur, we create a hotfix branch from the release branch, deploy the fix, and then merge those changes back into both the release and main branches to keep all environments synchronized.
+
+This answer is practical, easy to explain, and aligns well with how many enterprise teams manage releases and production support.
+
+
+---
