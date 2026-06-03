@@ -21,7 +21,7 @@ LOG_FILE="/var/log/myapp/log_rotation.log"
 # Ensure the log directory exists
 if [ ! -d "$LOG_DIR" ]; then
     echo "[$(date)] ERROR: Log directory $LOG_DIR does not exist!" >> "$LOG_FILE"
-    exit 1
+    exit 1                   # means stop the script and return an error status.
 fi
 
 # Compress logs older than 7 days (but newer than 30)
