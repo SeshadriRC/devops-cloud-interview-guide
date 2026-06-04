@@ -58,7 +58,12 @@ If you want to **save the result to a new file**:
 sed '1d; $d' file.txt > trimmed.txt
 ```
 
+```bash
+sed -i '1d; $d' file.txt
+```
+
 > Summary:  
 > The `sed '1d; $d'` command is an efficient way to remove both the first and last lines of a text file using line number and end-of-file markers.
+> 
 
 ---
