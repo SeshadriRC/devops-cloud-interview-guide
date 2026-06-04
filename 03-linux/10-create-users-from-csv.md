@@ -1,3 +1,4 @@
+[refer](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/03-linux/create_users.sh)
 
 ## Question  
 You’ve received a CSV file with a list of usernames and passwords to create users on a Linux system.  
