@@ -59,11 +59,10 @@ sed '1d; $d' file.txt > trimmed.txt
 ```
 
 ```bash
-sed -i '1d; $d' file.txt
+sed -i '1d; $d' file.txt  # The -i flag tells it to actually modify file.txt and save the changes.
 ```
 
 > Summary:  
 > The `sed '1d; $d'` command is an efficient way to remove both the first and last lines of a text file using line number and end-of-file markers.
-> 
 
 ---
