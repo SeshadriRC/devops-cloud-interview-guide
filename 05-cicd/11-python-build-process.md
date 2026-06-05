@@ -94,3 +94,7 @@ For a Flask-based API project:
 > The Python build process involves organizing code, managing dependencies, building wheels/sdists, and optionally publishing to PyPI or packaging into Docker images. Even though Python is interpreted, structured builds help automate testing and deployment at scale.
 
 ---
+
+<img width="1572" height="757" alt="image" src="https://github.com/user-attachments/assets/130b206e-163b-4ddc-a87a-e953f07d5c75" />
+
+<img width="1122" height="845" alt="image" src="https://github.com/user-attachments/assets/f377a586-c552-4a45-9cfe-c72ea8a9d062" />
