@@ -77,3 +77,77 @@ In our Jenkins setup:
 > - Customize recipient list and email templates for clarity
 
 ---
+
+# Summarize
+
+<img width="1825" height="878" alt="image" src="https://github.com/user-attachments/assets/c29a2bf1-4147-40b3-9fbb-08f16d727c85" />
+
+## Jenkins Build Failure Email Notification – Interview Summary
+
+### Interview Question
+
+**"When a build fails in Jenkins, how will you send an email?"**
+
+There are two key points:
+
+1. Send the email **only when the build fails**.
+2. The interviewer may not specify whether it's a **Freestyle Job** or a **Declarative Pipeline**, so be prepared to explain both.
+
+---
+
+## 1. Freestyle Jenkins Project
+
+### Prerequisite
+
+Ensure the **Email Extension Plugin** is installed.
+
+### Steps
+
+1. Open the Jenkins job.
+2. Click **Configure**.
+3. Go to **Post-build Actions**.
+4. Select **Editable Email Notification**.
+5. Configure recipients.
+6. Set the trigger to **Failure**.
+
+Result:
+
+* An email is sent only when the build fails.
+
+---
+
+## 2. Declarative Jenkins Pipeline
+
+In a Jenkinsfile, use the **post** section with a **failure** block.
+
+Example:
+
+
+<img width="1755" height="905" alt="image" src="https://github.com/user-attachments/assets/2373c11e-0806-45b0-a0d2-0b91d348aee5" />
+
+
+```groovy
+post {
+    failure {
+        mail to: 'team@example.com',
+             subject: 'Build Failed',
+             body: 'Please check the Jenkins build logs.'
+    }
+}
+```
+
+
+Result:
+
+* Jenkins sends an email automatically whenever the pipeline fails.
+
+---
+
+## Interview Answer (Short Version)
+
+> For a Freestyle Jenkins job, I would use the Email Extension Plugin and configure an "Editable Email Notification" post-build action with the trigger set to "Failure." For a Declarative Pipeline, I would use the `post { failure { ... } }` section in the Jenkinsfile and configure the `mail` step with the required recipients, subject, and message. This ensures notifications are sent only when the build fails.
+
+
+---
+
+
