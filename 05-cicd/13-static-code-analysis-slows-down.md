@@ -100,3 +100,144 @@ In one repo, `pylint` checks across the monorepo were taking 4–5 minutes per b
 > - Tune rule sets and cache dependencies
 
 ---
+# Summarize
+
+# Does Static Code Analysis Slow Down CI? How Would You Fix It?
+
+One of the common challenges in CI/CD pipelines is **long build times**, and static code analysis can often be a major contributor.
+
+Consider this scenario:
+
+* Initially, the application had **100 lines of code**.
+* Over time, it grew to **1,000 lines**.
+* Eventually, the microservice reached **20,000+ lines of source code**.
+
+If static code analysis is executed on the entire codebase every time a developer commits code, the CI pipeline will naturally take longer to complete.
+
+This is because static code analysis tools scan the source code to identify:
+
+* Syntax issues
+* Unused variables and functions
+* Code quality violations
+* Basic security concerns
+
+As the codebase grows, the analysis time increases as well.
+
+### Interview Question
+
+**"Static code analysis slows down CI pipelines. How would you fix this issue?"**
+
+This is a great question because it helps the interviewer assess your practical CI/CD experience.
+
+### Answer
+
+If asked this question, you can explain that you have faced this issue before and solved it using **two approaches**.
+
+---
+
+## Step 1: Run Static Code Analysis Only on Changed Files
+
+Instead of analyzing the entire codebase on every commit or pull request, analyze only the files that were modified.
+
+For example:
+
+* A pull request may contain only 1–3 changed files.
+* Sometimes only a few lines of code are modified.
+
+Running static code analysis on those changed files is significantly faster than scanning all 20,000 lines of source code.
+
+### Implementation
+
+A common approach is:
+
+1. Use `git diff` to identify modified files.
+2. Pass only those files to the static code analysis tool.
+
+Example:
+
+```bash
+git diff --name-only origin/main...HEAD
+```
+
+If you're using Python with Flake8:
+
+```bash
+flake8 <changed-files>
+```
+
+Many modern static code analysis tools already support analyzing only changed files or pull request changes.
+
+Before implementing a custom solution, check whether the tool provides this feature natively. If it does, simply enable the configuration. Otherwise, use a `git diff`-based approach.
+
+### Benefits
+
+* Faster CI execution
+* Faster developer feedback
+* Reduced resource consumption
+* Better developer productivity
+
+
+
+## Step 2: Run Full Static Code Analysis in Nightly Builds
+
+While analyzing only changed files is fast, you still need periodic validation of the entire codebase.
+
+This is where **nightly builds** come in.
+
+### What Is a Nightly Build?
+
+A nightly build is an automated CI pipeline that runs on a schedule (typically every night) against the main branch.
+
+Its purpose is to verify that:
+
+* All merged changes work together correctly.
+* Code quality remains consistent across the entire application.
+* No hidden issues exist outside the modified files.
+
+### Why Is This Important?
+
+Consider two developers:
+
+* Developer A submits changes and passes CI.
+* Developer B submits changes and passes CI.
+
+Individually, both changes are valid.
+
+However, once both changes are merged into the main branch, there may be interactions or issues that were not detected during individual pull request validation.
+
+A nightly build helps catch such problems.
+
+### What Runs in the Nightly Build?
+
+The nightly pipeline can include:
+
+* Full static code analysis
+* Complete test suites
+* Security scans
+* Integration tests
+* Code quality reports
+
+This ensures that the entire codebase remains healthy without slowing down every developer commit.
+
+
+## Recommended Strategy
+
+### Pull Requests / Commits
+
+* Run static code analysis only on changed files.
+* Provide quick feedback to developers.
+
+### Nightly Builds
+
+* Run full static code analysis on the entire codebase.
+* Execute comprehensive validation checks.
+
+
+## Interview Answer (Short Version)
+
+> Yes, static code analysis can slow down CI pipelines as the codebase grows. To optimize performance, I use two approaches. First, I run static code analysis only on files changed in a commit or pull request, typically using `git diff` or built-in pull-request analysis features of the tool. Second, I schedule full static code analysis as part of nightly builds, where the entire codebase is scanned. This provides fast feedback to developers while still ensuring complete code quality validation on a regular basis.
+
+This answer demonstrates practical experience with scaling CI/CD pipelines and balancing **fast feedback** with **comprehensive quality checks**.
+
+
+---
