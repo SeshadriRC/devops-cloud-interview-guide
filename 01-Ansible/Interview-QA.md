@@ -1,3 +1,17 @@
+# Collections
+
+**What is ansible.builtin.service?**
+
+
+service is an Ansible module.
+
+ansible.builtin → Collection/namespace
+service → Module name
+
+----
+
+****
+
 # Roles
 
 **What is Ansible Roles**
