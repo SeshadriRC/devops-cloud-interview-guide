@@ -1,4 +1,4 @@
-[repo](https://github.com/jaiswaladi246/Ansible-VM-Monitor.git)
+[repo](https://github.com/SeshadriRC/Ansible-VM-Monitor)
 
 Ansible Project To Monitor VMs Health
 
