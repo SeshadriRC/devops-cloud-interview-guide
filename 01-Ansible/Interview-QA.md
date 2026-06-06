@@ -149,3 +149,15 @@ DEFAULT_ROLES_PATH(default) = ['/root/.ansible/roles', '/usr/share/ansible/roles
   roles:
     - bsmeding.docker
 ```
+****************************
+# Molecule
+
+**1. What is molecule in Ansible**
+
+Molecule is a testing framework for Ansible roles. It allows you to automatically verify that your role works correctly before deploying it to real servers.
+
+In 2 lines (Interview Answer)
+
+Molecule is used to test Ansible roles by creating temporary environments (Docker containers, VMs, etc.), executing the role, and validating the results. It helps catch configuration issues early and ensures the role behaves as expected.
+
+---
