@@ -1,5 +1,13 @@
 # Roles
 
+**What is Ansible Roles**
+
+**Ansible Role** is a reusable and organized way to group related automation tasks, variables, templates, handlers, and files into a single unit.
+
+It helps avoid duplication by allowing the same configuration (e.g., Apache installation, user creation, database setup) to be reused across multiple playbooks and environments.
+
+---
+
 **How to Create a Role in ansible**
 
 ```bash
