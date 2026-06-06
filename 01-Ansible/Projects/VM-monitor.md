@@ -17,6 +17,8 @@ sudo ./aws/install
 aws configure
 
 Tagging Script:
+
+```bash
 #!/bin/bash
 
 # Fetch instance IDs that match Environment=dev and Role=web
@@ -27,8 +29,10 @@ instance_ids=$(aws ec2 describe-instances \
 
 # Sort instance IDs deterministically
 sorted_ids=($(echo "$instance_ids" | tr '\t' '\n' | sort))
+```
 
 # Rename instances sequentially
+```bash
 counter=1
 for id in "${sorted_ids[@]}"; do
   name="web-$(printf "%02d" $counter)"
@@ -37,10 +41,13 @@ for id in "${sorted_ids[@]}"; do
     --tags Key=Name,Value="$name"
   ((counter++))
 done
-
+```
 
 # generate ssh key on master
+
+```bash
 ssh-keygen -t rsa -b 4096 -C "Ansible-master"
+```
 
 ansible.cfg
 [defaults]
