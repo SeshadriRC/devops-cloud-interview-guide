@@ -1,12 +1,17 @@
 Ansible Project To Monitor VMs Health
+
 🔹 Step 1: Update the System
+
 sudo apt update && sudo apt upgrade -y
 
 🔹 Step 2: Add the Ansible PPA
+
 Ansible provides an official maintained PPA (for latest versions):
+
 sudo add-apt-repository --yes --update ppa:ansible/ansible
 
 🔹 Step 3: Install Ansible
+
 sudo apt install ansible -y
 
 # Install AWS CLI
