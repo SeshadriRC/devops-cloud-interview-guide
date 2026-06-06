@@ -1,4 +1,4 @@
-[**Scenario-baseed-Ques**](https://github.com/SeshadriRC/DevOps-Docs/blob/main/Kubernetes/k8s%20scenario%20Q%26A.md)
+[**Scenario-based-Ques**](https://github.com/SeshadriRC/DevOps-Docs/blob/main/Kubernetes/k8s%20scenario%20Q%26A.md)
 
 ---
 **How do you manage your Kubernetes clusters in this case cuz you said you have a DevOps engineer dedicated to a development team but end of the day all these microservices from different development teams I hope are deployed to the common cluster so how exactly you manage these clusters can you walk me through that**
