@@ -12,3 +12,8 @@
 
 ---
 
+**How the User request is travelled**
+
+[link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/my-guide/Kubernetes/Concepts/user-request-travel.md)
+
+---
