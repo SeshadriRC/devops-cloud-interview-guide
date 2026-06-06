@@ -50,14 +50,19 @@ ssh-keygen -t rsa -b 4096 -C "Ansible-master"
 ```
 
 ansible.cfg
+```bash
 [defaults]
 inventory = ./inventory/aws_ec2.yaml
 host_key_checking = False
-
+```
 [ssh_connection]
 ssh_args = -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
-Dynamic Inventory
-inventory/aws_ec2.yaml 
+
+
+## Dynamic Inventory
+
+inventory/aws_ec2.yaml
+```yaml
 plugin: amazon.aws.aws_ec2
 regions:
   - ap-south-1
@@ -71,9 +76,9 @@ keyed_groups:
     prefix: name
   - key: tags.Environment
     prefix: env                               
+```
 
-
-
+```bash
 # Step 1: Install venv module if not already present
 sudo apt install python3-venv -y
 
@@ -85,10 +90,14 @@ source ansible-env/bin/activate
 
 # Step 4: Install required Python packages
 pip install boto3 botocore docker
+```
 
+```bash
 ansible-galaxy collection install amazon.aws
 
+
 ansible-inventory -i inventory/aws_ec2.yaml --graph
+```
 
 Copy Pub Key
 #!/bin/bash
