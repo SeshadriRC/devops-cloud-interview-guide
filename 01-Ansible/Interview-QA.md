@@ -8,7 +8,7 @@ ansible-galaxy role init apache
 
 - This creates the below structure automatically
 
-
+```
 apache/
 ├── defaults
 ├── files
@@ -18,7 +18,7 @@ apache/
 ├── templates
 ├── tests
 └── vars
-
+```
 ---
 
 **Structure of Ansible role**
