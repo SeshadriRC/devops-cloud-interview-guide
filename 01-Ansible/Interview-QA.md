@@ -1,4 +1,32 @@
-**1. How to install ansible role and in which location it got stored***
+# Roles
+
+**How to Create a Role in ansible**
+
+```bash
+ansible-galaxy role init apache
+```
+
+- This creates the below structure automatically
+
+
+apache/
+├── defaults
+├── files
+├── handlers
+├── meta
+├── tasks
+├── templates
+├── tests
+└── vars
+
+---
+
+**Structure of Ansible role**
+
+
+
+
+**How to install ansible role and in which location it got stored**
 
 ```bash
 ## Install ansible role
@@ -10,7 +38,7 @@ DEFAULT_ROLES_PATH(default) = ['/root/.ansible/roles', '/usr/share/ansible/roles
 ```
 
 ---
-**2. How to Call the role**
+**How to Call the role**
 
 ```yaml
 - hosts: localhost
