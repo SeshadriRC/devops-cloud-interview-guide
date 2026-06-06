@@ -60,7 +60,6 @@ roles/
 | `tests/`     | Test playbooks and inventories.                           |
 | `README.md`  | Documentation for the role.                               |
 
----
 
 ## Example
 
