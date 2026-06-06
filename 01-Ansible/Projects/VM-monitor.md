@@ -109,6 +109,8 @@ USER="ubuntu"  # or ec2-user
 INVENTORY_FILE="inventory/aws_ec2.yaml"
 
 # Extract hostnames/IPs from dynamic inventory
+
+```bash
 HOSTS=$(ansible-inventory -i $INVENTORY_FILE --list | jq -r '._meta.hostvars | keys[]')
 
 for HOST in $HOSTS; do
@@ -121,8 +123,11 @@ for HOST in $HOSTS; do
   "
 done
 
+```
 
 Create the Project & Run below Command to execute
+```bash
 Project Repo: https://github.com/jaiswaladi246/Ansible-VM-Monitor.git
 
 ansible-playbook playbook.yaml 
+```
