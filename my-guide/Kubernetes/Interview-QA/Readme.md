@@ -6,3 +6,9 @@
 
 ---
 
+**Service-to-Service-communication-Kubernetes**
+
+[refer](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/my-guide/Kubernetes/Service/01-Service-Service-Communication.md)
+
+---
+
