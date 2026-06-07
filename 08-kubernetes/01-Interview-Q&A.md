@@ -1,3 +1,11 @@
+## Pod
+
+**Pod Affinity and Anti-affinity**
+
+[refer](https://github.com/SeshadriRC/documentation/blob/main/kubernetes/PodAffinity/Affinity.md)
+
+---
+
 ## Service
 
 **Kubectl port forward, how to do**
