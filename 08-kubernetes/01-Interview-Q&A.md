@@ -1,1 +1,37 @@
-dfd
+## Service
+
+**Kubectl port forward, how to do**
+
+```bash
+root@controlplane:~$ kubectl get svc -n monitoring
+NAME                                      TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+alertmanager-operated                     ClusterIP   None             <none>        9093/TCP,9094/TCP,9094/UDP   12m
+prometheus-grafana                        ClusterIP   10.96.206.179    <none>        80/TCP                       12m
+
+kubectl port-forward --address 0.0.0.0 -n monitoring svc/prometheus-grafana 3000:80
+```
+
+| Part                     | Meaning                                                                  |
+| ------------------------ | ------------------------------------------------------------------------ |
+| `kubectl`                | Kubernetes command-line tool                                             |
+| `port-forward`           | Creates a tunnel from your local machine to a Pod/Service in the cluster |
+| `--address 0.0.0.0`      | Listen on all network interfaces (not just localhost)                    |
+| `-n monitoring`          | Service is in the `monitoring` namespace                                 |
+| `svc/prometheus-grafana` | Target Kubernetes Service named `prometheus-grafana`                     |
+| `3000:80`                | Forward local port **3000** to Service port **80**                       |
+
+**Traffic flow***
+
+
+Browser
+   |
+   | http://<node-ip>:3000
+   |
+Control Plane Node
+(Local Port 3000)
+   |
+kubectl port-forward
+   |
+Service: prometheus-grafana (Port 80)
+   |
+Grafana Pod(s)
