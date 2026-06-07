@@ -1,8 +1,11 @@
+
 ## Pod
 
 **Pod Affinity and Anti-affinity**
 
 [refer](https://github.com/SeshadriRC/documentation/blob/main/kubernetes/PodAffinity/Affinity.md)
+
+---
 
 **Login to the running pod**
 
@@ -11,6 +14,12 @@ kubectl exec -it <pod-name> -- sh
 
 kubectl exec -it java-app-deployment-6ffb7dd46-bc84f -- sh
 ```
+---
+# Resource
+
+**What is Resource and Requests**
+
+[Refer](https://github.com/SeshadriRC/documentation/tree/main/kubernetes/resource-limit-and-request)
 
 ---
 
