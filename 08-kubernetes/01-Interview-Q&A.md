@@ -38,6 +38,11 @@ kubectl exec -it java-app-deployment-6ffb7dd46-bc84f -- sh
 [Probe-notes-refer](https://github.com/SeshadriRC/documentation/blob/main/kubernetes/Probes/guide.md)
 
 ---
+## Deployment
+
+[deployment-notes](https://github.com/SeshadriRC/documentation/tree/main/kubernetes/Deployments)
+
+---
 # Resource
 
 **What is Resource and Requests**
