@@ -1,4 +1,9 @@
+## Architecture
 
+- [Read-doc-1](https://github.com/SeshadriRC/documentation/blob/main/kubernetes/Architecture/Kubernetes-explained.md)
+- [Read-doc-2](https://github.com/SeshadriRC/documentation/blob/main/kubernetes/Architecture/Architecture.md)
+
+---
 ## Pod
 
 **Pod Affinity and Anti-affinity**
