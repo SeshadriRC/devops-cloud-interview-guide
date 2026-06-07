@@ -42,6 +42,12 @@ kubectl exec -it java-app-deployment-6ffb7dd46-bc84f -- sh
 
 [deployment-notes](https://github.com/SeshadriRC/documentation/tree/main/kubernetes/Deployments)
 
+
+---
+## ConfigMap-Secrets-Env variables
+
+[notes](https://github.com/SeshadriRC/documentation/tree/main/kubernetes/ConfigMap-Secrets-Env)
+
 ---
 # Resource
 
