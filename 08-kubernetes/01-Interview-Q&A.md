@@ -15,6 +15,12 @@ kubectl exec -it <pod-name> -- bash  # for bash based container
 
 kubectl exec -it java-app-deployment-6ffb7dd46-bc84f -- sh
 ```
+
+---
+## Probes
+
+[refer](https://github.com/SeshadriRC/documentation/blob/main/kubernetes/Probes/guide.md)
+
 ---
 # Resource
 
