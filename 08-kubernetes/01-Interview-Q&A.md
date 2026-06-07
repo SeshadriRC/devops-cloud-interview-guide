@@ -48,6 +48,12 @@ kubectl exec -it java-app-deployment-6ffb7dd46-bc84f -- sh
 
 ## Service
 
+**Service**
+
+[Service-and-its-types](https://github.com/SeshadriRC/documentation/tree/main/kubernetes/Service)
+
+---
+
 **Kubectl port forward, how to do**
 
 ```bash
