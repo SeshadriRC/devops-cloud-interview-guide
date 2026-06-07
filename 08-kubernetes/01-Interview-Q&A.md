@@ -10,7 +10,8 @@
 **Login to the running pod**
 
 ```bash
-kubectl exec -it <pod-name> -- sh
+kubectl exec -it <pod-name> -- sh    # for sh based container
+kubectl exec -it <pod-name> -- bash  # for bash based container
 
 kubectl exec -it java-app-deployment-6ffb7dd46-bc84f -- sh
 ```
