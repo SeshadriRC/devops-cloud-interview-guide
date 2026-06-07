@@ -1,32 +1,3 @@
-**Add the helm repo**
-
-```bash
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-"prometheus-community" has been added to your repositories
-
-helm repo add <repo-name-anything> https://prometheus-community.github.io/helm-charts
-```
-
-**list helm repo**
-
-```bash
-helm repo list
-
-root@controlplane:~$ helm repo list 
-NAME                    URL                                               
-prometheus-community    https://prometheus-community.github.io/helm-charts
-prometheus-community2   https://prometheus-community.github.io/helm-charts
-```
-
-**Search in helm repo**
-
-```bash
-# Below will list all the charts from both the repo
-helm search repo 
-
-# Below will list only the mentioned chart
-root@controlplane:~$ helm search repo kube-prometheus-stack
-NAME                                            CHART VERSION   APP VERSION     DESCRIPTION                                       
-prometheus-community/kube-prometheus-stack      86.2.0          v0.91.0         kube-prometheus-stack collects Kubernetes manif...
-prometheus-community2/kube-prometheus-stack     86.2.0          v0.91.0         kube-prometheus-stack collects Kubernetes manif...
-```
+[tamil-video](https://www.youtube.com/watch?v=0IDeXe9Zqns)
+[helm-repo-tamil-practicals](https://github.com/SeshadriRC/documentation/blob/main/helm/helm-basics/guide.md#practicals)
+[English-video](https://www.youtube.com/watch?v=7A5cH8iqgHU)
