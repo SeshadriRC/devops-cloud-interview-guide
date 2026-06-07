@@ -6,6 +6,12 @@
 ---
 ## Pod
 
+**Pod**
+
+[read-here](https://github.com/SeshadriRC/documentation/blob/main/kubernetes/Pod/guide.md)
+
+---
+
 **Pod Affinity and Anti-affinity**
 
 [refer](https://github.com/SeshadriRC/documentation/blob/main/kubernetes/PodAffinity/Affinity.md)
