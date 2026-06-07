@@ -56,6 +56,11 @@ kubectl exec -it java-app-deployment-6ffb7dd46-bc84f -- sh
 [Refer](https://github.com/SeshadriRC/documentation/tree/main/kubernetes/resource-limit-and-request)
 
 ---
+## Daemonset
+
+[notes](https://github.com/SeshadriRC/documentation/blob/main/kubernetes/DaemonSet/guide.md)
+
+---
 
 ## Service
 
