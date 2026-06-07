@@ -18,6 +18,11 @@
 
 ---
 
+**ReplicaSets**
+
+[refer](https://github.com/SeshadriRC/documentation/blob/main/kubernetes/Replicasets/Replicasets.md)
+
+---
 **Login to the running pod**
 
 ```bash
