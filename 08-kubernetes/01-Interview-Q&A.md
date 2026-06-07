@@ -22,7 +22,7 @@ kubectl port-forward --address 0.0.0.0 -n monitoring svc/prometheus-grafana 3000
 
 **Traffic flow***
 
-
+```
 Browser
    |
    | http://<node-ip>:3000
@@ -33,5 +33,6 @@ Control Plane Node
 kubectl port-forward
    |
 Service: prometheus-grafana (Port 80)
+```
    |
 Grafana Pod(s)
