@@ -11,6 +11,8 @@ prometheus-grafana                        ClusterIP   10.96.206.179    <none>   
 kubectl port-forward --address 0.0.0.0 -n monitoring svc/prometheus-grafana 3000:80
 ```
 
+- This command forwards local port 3000 on the machine running kubectl to port 80 of the Kubernetes Service prometheus-grafana in the monitoring namespace. The --address 0.0.0.0 option allows connections from any network interface, making the application accessible remotely rather than only from localhost.
+
 | Part                     | Meaning                                                                  |
 | ------------------------ | ------------------------------------------------------------------------ |
 | `kubectl`                | Kubernetes command-line tool                                             |
@@ -33,6 +35,6 @@ Control Plane Node
 kubectl port-forward
    |
 Service: prometheus-grafana (Port 80)
-```
    |
 Grafana Pod(s)
+```
