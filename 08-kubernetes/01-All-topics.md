@@ -117,3 +117,9 @@ Grafana Pod(s)
 ```
 
 ---
+
+## Statefulset
+
+[read](https://github.com/SeshadriRC/documentation/blob/main/kubernetes/Statefulset/guide-statefulset.md)
+
+---
