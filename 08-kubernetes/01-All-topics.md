@@ -129,3 +129,9 @@ Grafana Pod(s)
 [read](https://github.com/SeshadriRC/documentation/tree/main/kubernetes/PV-PVC-Storage-class)
 
 ---
+
+## Ingress Controller
+
+[read](https://github.com/SeshadriRC/documentation/tree/main/kubernetes/Ingress-Ingress-controller)
+
+---
