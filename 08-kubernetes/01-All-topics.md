@@ -141,3 +141,9 @@ Grafana Pod(s)
 [read](https://github.com/SeshadriRC/documentation/tree/main/kubernetes/RBAC)
 
 ---
+
+## Taints/Tolerations/Node-selectors/Node-Affinity
+
+[read](https://github.com/SeshadriRC/documentation/tree/main/kubernetes/taint-tolerent-nodeAffinity)
+
+---
