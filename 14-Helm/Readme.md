@@ -1,3 +1,4 @@
 - [tamil-video](https://www.youtube.com/watch?v=0IDeXe9Zqns)
-- [helm-repo-tamil-practicals](https://github.com/SeshadriRC/documentation/blob/main/helm/helm-basics/guide.md#practicals)
 - [English-video](https://www.youtube.com/watch?v=7A5cH8iqgHU)
+- [helm-repo-tamil-practicals](https://github.com/SeshadriRC/documentation/blob/main/helm/helm-basics/guide.md#practicals)
+- [helm-repo-english-practicals](https://github.com/SeshadriRC/helm-zero-to-hero)
