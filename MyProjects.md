@@ -5,7 +5,7 @@
 
 ## CICD
 
-- [End-to-End-CICD](https://github.com/gashok13193/end-to-end/tree/master)
+- [End-to-End-CICD](https://github.com/SeshadriRC/end-to-end)
 
 ## Kubernetees
 
