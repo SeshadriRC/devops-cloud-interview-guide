@@ -15,3 +15,8 @@
 ## Observability
 
 - [Prometheus-Grafana-Installation-on-Kubernetes](https://github.com/SeshadriRC/DevOps-Docs/blob/main/Prometheus&Grafana/Prometheus&Grafan.md)
+
+
+## Shell scripting
+
+- [upload-jenkins-to-S3](https://gist.github.com/SeshadriRC/cfc4cd41a7bee84e7ac368fd8e74d50d#file-upload_jenkins_build_logs-sh)
