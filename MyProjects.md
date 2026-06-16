@@ -1,3 +1,7 @@
+## AWS
+
+- [Cost-optimization](https://github.com/SeshadriRC/Devops-Concepts/blob/main/Mastering-a-Cloud-Platform/Lambda-cost-optimization.md)
+
 ## Ansible
 
 - [Jenkins-installation](https://galaxy.ansible.com/ui/standalone/roles/serhii9132/jenkins/)
