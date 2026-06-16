@@ -1,6 +1,7 @@
 ## AWS
 
-- [Cost-optimization](https://github.com/SeshadriRC/Devops-Concepts/blob/main/Mastering-a-Cloud-Platform/Lambda-cost-optimization.md)
+- [Cost-optimization-EBS](https://github.com/SeshadriRC/Devops-Concepts/blob/main/Mastering-a-Cloud-Platform/Lambda-cost-optimization.md)
+- [Cost-optimization-RDS](https://github.com/SeshadriRC/Devops-Concepts/blob/main/Mastering-a-Cloud-Platform/RDS-automation.md)
 
 ## Ansible
 
