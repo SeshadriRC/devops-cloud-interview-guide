@@ -553,3 +553,125 @@ Executes pipeline (Declarative or Scripted)
 In most projects today, **Declarative Pipeline is more commonly used** because it is easier to maintain and review. Scripted is usually chosen only when the pipeline logic becomes very dynamic or complex.
 
 ---
+
+# So what is git rebase and git pull. just explain in simple manner
+
+Think of both as ways to **bring latest changes from GitHub (remote repo) into your local branch**, but they do it differently.
+
+## 1. `git pull`
+
+`git pull` = **Download latest changes + merge them into your branch**
+
+Command:
+
+```bash
+git pull origin main
+```
+
+What happens:
+
+```plaintext
+GitHub (main)
+A → B → C
+
+Local
+A → B
+
+After git pull
+
+A → B → C → Merge Commit
+```
+
+Example:
+
+* Your teammate added code to GitHub.
+* You run `git pull`
+* Git downloads and merges automatically.
+
+Result:
+
+* History may contain **merge commits**
+
+Simple meaning:
+
+> "Bring latest code and combine it with my code."
+
+---
+
+## 2. `git rebase`
+
+`git rebase` = **Take your changes, move them on top of latest code**
+
+Command:
+
+```bash
+git pull --rebase origin main
+```
+
+or
+
+```bash
+git rebase main
+```
+
+What happens:
+
+Before:
+
+```plaintext
+GitHub
+A → B → C
+
+Your branch
+A → B → D
+```
+
+After rebase:
+
+```plaintext
+A → B → C → D
+```
+
+Git:
+
+1. Gets latest changes (`C`)
+2. Temporarily removes your commit (`D`)
+3. Applies latest code
+4. Re-applies your changes
+
+Result:
+
+* Cleaner history
+* No extra merge commit
+
+Simple meaning:
+
+> "First update from GitHub, then place my work on top."
+
+---
+
+## Quick difference
+
+|                      | git pull         | git rebase        |
+| -------------------- | ---------------- | ----------------- |
+| Purpose              | Fetch + Merge    | Reapply commits   |
+| Creates merge commit | Yes              | Usually No        |
+| History              | Can become messy | Cleaner           |
+| Easy to use          | Yes              | Slightly advanced |
+
+Example:
+
+```plaintext
+git pull
+→ Join two roads
+
+git rebase
+→ Move your car to latest road and continue
+```
+
+Interview short answer:
+
+> `git pull` fetches and merges remote changes into local branch, whereas `git rebase` moves local commits on top of the latest remote commits to maintain a clean commit history.
+
+
+---
