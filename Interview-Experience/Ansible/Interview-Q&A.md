@@ -9,5 +9,20 @@ ansible all -m shell -a "df -h"
 
 ```
 
+2. Which value will be used for host web01?
+
+```bash
+host_vars/web01.yml      → port: 8080
+group_vars/webservers.yml → port: 80
+playbook.yml (vars)       → port: 9090
+
+
+group_vars/webservers.yml → 80     (lowest)
+host_vars/web01.yml → 8080
+playbook vars → 9090     (highest here)
+
+
+Answer is: 9090
+```
 
 ---
