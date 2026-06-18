@@ -12,6 +12,7 @@ Simple example:
 
 User opens an e-commerce app:
 
+```
 User
  ↓
 Frontend
@@ -23,6 +24,13 @@ Product Service
 Payment Service
  ↓
 Database
+```
+---
+
+3. Davis AI in Dynatrace
+
+- Davis AI is Dynatrace’s AI engine for observability and root cause analysis.
+- Automatically analyzing metrics, logs, traces, dependencies, and events to find the probable root cause of issues.
 
 ---
 
