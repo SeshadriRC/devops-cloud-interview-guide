@@ -25,4 +25,12 @@ playbook vars → 9090     (highest here)
 Answer is: 9090
 ```
 
+3. You're designing an automation system with multiple control nodes and wants them to share inventory and roles
+
+
+- Use dynamic inventory with centralized Git-based role storage
+- In enterprise Ansible setups with multiple control nodes, we generally use dynamic inventory for automatic host discovery and maintain roles/playbooks in a centralized Git repository to ensure consistency and scalability.
+
 ---
+
+
