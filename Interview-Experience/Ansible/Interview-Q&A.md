@@ -9,6 +9,8 @@ ansible all -m shell -a "df -h"
 
 ```
 
+---
+
 2. Which value will be used for host web01?
 
 ```bash
@@ -24,6 +26,7 @@ playbook vars → 9090     (highest here)
 
 Answer is: 9090
 ```
+---
 
 3. You're designing an automation system with multiple control nodes and wants them to share inventory and roles
 
