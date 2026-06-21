@@ -35,5 +35,33 @@ Answer is: 9090
 - In enterprise Ansible setups with multiple control nodes, we generally use dynamic inventory for automatic host discovery and maintain roles/playbooks in a centralized Git repository to ensure consistency and scalability.
 
 ---
+4. Check the OS family using ansible adhoc command
+
+```bash
+ansible hosts -m setup -a "filter=ansible_os_family" -u ansible
+
+
+[WARNING]: Host '192.168.56.12' is using the discovered Python interpreter at '/usr/bin/python3.10', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+192.168.56.12 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_os_family": "Debian",
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false
+}
+
+[WARNING]: Host '192.168.56.11' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+192.168.56.11 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_os_family": "RedHat",
+        "discovered_interpreter_python": "/usr/bin/python3.9"
+    },
+    "changed": false
+}
+
+```
+
+---
+
 
 
