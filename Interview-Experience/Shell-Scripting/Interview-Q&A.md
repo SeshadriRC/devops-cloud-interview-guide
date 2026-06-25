@@ -44,3 +44,12 @@ hello temp
 ```
 
 ---
+
+4. Assume there is a log file(ora.logs), which has ORA errors. i need to print only the ORA errors
+
+```bash
+grep -o "ORA-00019" ora.logs
+```
+
+
+---
