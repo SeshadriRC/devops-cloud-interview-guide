@@ -66,6 +66,8 @@ ansible hosts -m setup -a "filter=ansible_os_family" -u ansible
 
 - Handler is one of the task , it will be executed only when another task in the playbook notifies them.
 
+[blog](https://spacelift.io/blog/ansible-handlers#what-are-ansible-handlers)
+
 ---
 
 
