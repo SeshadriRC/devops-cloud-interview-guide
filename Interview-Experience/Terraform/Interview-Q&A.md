@@ -14,3 +14,9 @@
 [blog](https://aws.plainenglish.io/our-terraform-state-got-corrupted-infrastructure-was-unmanageable-ce0ea6fbef41)
 
 ---
+
+3. Terraform provisioners
+
+[blog](https://spacelift.io/blog/terraform-provisioners)
+
+---
