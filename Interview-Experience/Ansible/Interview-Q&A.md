@@ -60,6 +60,11 @@ ansible hosts -m setup -a "filter=ansible_os_family" -u ansible
 }
 
 ```
+---
+
+5. What is Ansible handlers ?
+
+- Handler is one of the task , it will be executed only when another task in the playbook notifies them.
 
 ---
 
