@@ -129,3 +129,12 @@ For AWS EC2, `sudo su - ansible` is usually what you use.
 
 
 ---
+
+3. I need to find my application is consuming which port, how to do
+
+
+```bash
+ss -tulnp | grep nginx
+```
+
+---
