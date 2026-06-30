@@ -1,3 +1,5 @@
+1. Write a shell scripting where you need to print Today's date with your name , it should run interval of 5 seconds, name need to pass as an env variable.
+
 export name="Welcome"
 
 ```bash
