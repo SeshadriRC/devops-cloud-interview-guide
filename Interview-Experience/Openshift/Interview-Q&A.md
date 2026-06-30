@@ -37,3 +37,11 @@ oc get resourcequota
 ```
 
 ---
+
+5. In linux terminal, how would you authenticate to k8s cluster
+
+- kubectl should get installed
+- kubeconfig is stored in location `~/.kube/config`
+- then using the console we can take the token and login
+
+---
