@@ -29,3 +29,11 @@ Here are some of the impacts that pods on worker nodes may experience if the mas
 In summary, if the master node in Kubernetes goes down, the impact on pods running on worker nodes will depend on how the pods are configured and what services or resources they rely on. However, by design, worker nodes are intended to be resilient and continue to operate independently of the master node.
 
 ---
+
+4. Resourcequota command in Openshift
+
+```bash
+oc get resourcequota
+```
+
+---
