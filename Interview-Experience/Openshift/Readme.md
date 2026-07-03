@@ -5,7 +5,7 @@
 [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Openshift/my-preparation/pod-to-pod-communication.md)
 ---
 3. If both nslookup and curl fail, what does it indicate, and how will you proceed?
-[link]
+[link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Openshift/my-preparation/nslookup-curl.md)
 ---
 
 1. How you will integrate S3 with pod in aws, what will be the requirements
