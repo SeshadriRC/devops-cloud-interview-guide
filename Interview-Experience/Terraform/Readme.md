@@ -5,3 +5,7 @@
 2. Datasource in terraform [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Terraform/mypreparation/datasource.md)
 
 ---
+
+3. terraform refresh and terraform plan -refresh-only difference [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Terraform/mypreparation/terraform-refresh-refreshonly.md)
+
+---
