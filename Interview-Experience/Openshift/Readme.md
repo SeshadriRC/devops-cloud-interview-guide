@@ -4,6 +4,9 @@
 2. Both services are running, but communication still fails. What could be the possible reasons?
 [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Openshift/my-preparation/pod-to-pod-communication.md)
 ---
+3. If both nslookup and curl fail, what does it indicate, and how will you proceed?
+[link]
+---
 
 1. How you will integrate S3 with pod in aws, what will be the requirements
 
