@@ -8,3 +8,9 @@
 
 
 ---
+3. Multiple developers create different RC (Release Candidate) tags. How do you decide which tag gets deployed to production? [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/RC-tags.md)
+
+---
+4. Once the final RC tag is approved, explain the complete production deployment flow. [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/RC-deployment-flow.md)
+
+---
