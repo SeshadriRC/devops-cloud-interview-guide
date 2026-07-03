@@ -12,10 +12,10 @@
 ---
 5. A pod shows 100% CPU throttling in Grafana, but actual CPU usage is only 2–3 cores while the limit is 4 cores. How will you investigate? [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Openshift/my-preparation/cpu-throttled-grafana.md)
 
+---
+6. What is CNI ?
 
 ---
-
-
 1. How you will integrate S3 with pod in aws, what will be the requirements
 
 OIDC, serviceaccount, trustpolicy
