@@ -14,8 +14,11 @@
 
 ---
 6. What is CNI ? [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Openshift/my-preparation/CNI.md)
+---
+7. What is CRD ? [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Openshift/my-preparation/CRD.md)
 
 ---
+
 1. How you will integrate S3 with pod in aws, what will be the requirements
 
 OIDC, serviceaccount, trustpolicy
