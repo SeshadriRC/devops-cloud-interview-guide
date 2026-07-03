@@ -7,7 +7,7 @@
 3. If both nslookup and curl fail, what does it indicate, and how will you proceed?
 [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Openshift/my-preparation/nslookup-curl.md)
 ---
-4. Which Kubernetes architectural components are involved in service discovery and pod-to-pod communication? Explain the complete flow.[https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Openshift/my-preparation/service-discovery-kubernetes.md#complete-flow-of-service-discovery-and-pod-to-pod-communication]
+4. Which Kubernetes architectural components are involved in service discovery and pod-to-pod communication? Explain the complete flow.[link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Openshift/my-preparation/service-discovery-kubernetes.md#complete-flow-of-service-discovery-and-pod-to-pod-communication)
 
 ---
 
