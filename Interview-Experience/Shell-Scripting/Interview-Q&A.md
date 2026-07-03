@@ -51,6 +51,56 @@ hello temp
 grep -o "ORA-00019" ora.logs
 ```
 
+---
+
+5. Write a shell scripting where you need to print Today's date with your name , it should run interval of 5 seconds, name need to pass as an env variable.
+
+export name="Welcome"
+
+```bash
+#!/bin/bash
+
+while true
+do
+    echo "$(date) - $name"
+    sleep 5
+done
+```
+
+---
+
+6. write a shell script where it should delete all docker images and shedule it in a cronjob , assume its running on wednesday.
+
+```bash
+#!/bin/bash
+
+# Log file
+LOGFILE="/var/log/docker_image_cleanup.log"
+
+echo "==========================================" >> $LOGFILE
+echo "Docker Image Cleanup Started: $(date)" >> $LOGFILE
+
+# Remove all Docker images
+docker rmi -f $(docker images -q) >> $LOGFILE 2>&1
+
+echo "Docker Image Cleanup Completed: $(date)" >> $LOGFILE
+echo "==========================================" >> $LOGFILE
+```
+
+**crontab**
+
+```bash
+0 2 * * 3 /home/ec2-user/cleanup_docker_images.sh
+```
+
+| Field        | Value | Meaning      |
+| ------------ | ----- | ------------ |
+| Minute       | 0     | At 0 minutes |
+| Hour         | 2     | 2 AM         |
+| Day of Month | *     | Every day    |
+| Month        | *     | Every month  |
+| Day of Week  | 3     | Wednesday    |
+
 
 ---
 
