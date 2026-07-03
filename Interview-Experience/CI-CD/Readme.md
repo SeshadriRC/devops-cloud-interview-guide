@@ -14,3 +14,6 @@
 4. Once the final RC tag is approved, explain the complete production deployment flow. [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/RC-deployment-flow.md)
 
 ---
+5. What is UAT [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/UAT.md)
+
+---
