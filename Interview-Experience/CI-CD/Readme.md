@@ -4,3 +4,7 @@
 
 ---
 
+2. Explain the Declarative Jenkins Pipeline. How does the CI/CD pipeline work in your environment? [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/declarative-jenkins-pipeline.md)
+
+
+---
