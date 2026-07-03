@@ -87,6 +87,16 @@ resource "aws_subnet" "app" {
 }
 ```
 
+Terraform fetches the existing VPC ID and uses it.
+
+Common examples:
+
+* Existing VPC
+* Existing Security Group
+* Existing AMI
+* Existing Subnet
+
+
 Here:
 
 * The **data source** fetches the existing VPC.
