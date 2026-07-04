@@ -305,7 +305,9 @@ These can be displayed on Datadog dashboards or used to trigger alerts.
 
 
 ---
+# how the application is executing every minute ?
 
+- Good question. The Node.js application itself does not automatically execute every minute. There are several ways to achieve this, depending on the use case.
 - In many production EKS environments, applications don't call the Datadog API directly for every metric.
 
 ```
@@ -319,3 +321,261 @@ Datadog Cloud
 
 ```
 - The application sends metrics to the Datadog Agent running on the cluster, and the agent batches and forwards them efficiently. This reduces API calls and simplifies authentication.
+
+---
+
+# Ok you are sending metric, now i need to visualize in datadog console. how to achieve
+
+Once the metrics are sent successfully to Datadog, they are stored in Datadog's **Metrics** database. You can then create dashboards, graphs, alerts, and monitors based on those metrics.
+
+Let's use the same example.
+
+Your Node.js application sends these metrics every minute:
+
+```javascript
+metric: "myapp.response_time"
+
+metric: "myapp.active_users"
+```
+
+---
+
+# Step 1: Verify the Metrics Are Received
+
+Log in to the Datadog console.
+
+Navigate to:
+
+```text
+Metrics
+   ↓
+Metrics Explorer
+```
+
+In the search box, type:
+
+```text
+myapp.response_time
+```
+
+If the metric has been received, Datadog will autocomplete it.
+
+Similarly:
+
+```text
+myapp.active_users
+```
+
+If you don't see them, verify:
+
+* The API key is correct.
+* The API request succeeded (HTTP 202/200 depending on the endpoint).
+* The metric names are spelled correctly.
+* You're looking in the correct Datadog site (US1, EU, etc.).
+
+---
+
+# Step 2: Visualize in Metrics Explorer
+
+Select the metric:
+
+```text
+myapp.response_time
+```
+
+Choose:
+
+* Visualization: **Timeseries**
+* Aggregation: **Average**
+* Time: Last 1 hour
+
+You'll see a graph similar to:
+
+```text
+Response Time (ms)
+
+170 ┤
+160 ┤          ●
+150 ┤      ●       ●
+140 ┤   ●
+130 ┤
+    └────────────────────────► Time
+```
+
+You can repeat the same process for:
+
+```text
+myapp.active_users
+```
+
+---
+
+# Step 3: Create a Dashboard
+
+Go to:
+
+```text
+Dashboards
+      ↓
+New Dashboard
+```
+
+Click:
+
+```text
+Add Widget
+```
+
+Choose:
+
+```text
+Timeseries
+```
+
+Query:
+
+```text
+avg:myapp.response_time{*}
+```
+
+Add another widget.
+
+Query:
+
+```text
+avg:myapp.active_users{*}
+```
+
+Now your dashboard contains both graphs.
+
+Example:
+
+```text
+-----------------------------------------------------
+| Response Time              | Active Users          |
+|                            |                       |
+|    /\                      |      /\              |
+|   /  \                     |     /  \             |
+|__/____\_______             |____/____\_____       |
+-----------------------------------------------------
+```
+
+
+# Step 4: Filter Using Tags
+
+In your code you added tags:
+
+```javascript
+tags: [
+   "env:dev",
+   "service:web"
+]
+```
+
+Now you can query:
+
+```text
+avg:myapp.response_time{env:dev}
+```
+
+or
+
+```text
+avg:myapp.response_time{service:web}
+```
+
+This is extremely useful when the same application runs in multiple environments like Dev, QA, and Production.
+
+
+# Step 5: Create an Alert (Monitor)
+
+Go to:
+
+```text
+Monitors
+     ↓
+Create Monitor
+```
+
+Choose:
+
+```text
+Metric
+```
+
+Query:
+
+```text
+avg(last_5m):avg:myapp.response_time{*} > 300
+```
+
+Meaning:
+
+> If the average response time over the last 5 minutes exceeds **300 ms**, trigger an alert.
+
+You can configure notifications through:
+
+* Email
+* Slack
+* Microsoft Teams
+* PagerDuty
+* Opsgenie
+
+
+# End-to-End Flow
+
+```text
+                AWS EKS
+
++-----------------------------+
+|      Node.js Application    |
+|                             |
+|  sendMetrics()              |
+|         │                   |
+|         ▼                   |
+|  Datadog Metrics API        |
++-----------------------------+
+            │
+            ▼
+      Datadog Cloud
+            │
+            ├── Metrics Explorer
+            ├── Dashboards
+            ├── Monitors
+            └── Alerts
+```
+
+
+# Real-Time Example
+
+Suppose your application sends:
+
+```javascript
+Metric 1
+
+myapp.response_time = 180 ms
+```
+
+```javascript
+Metric 2
+
+myapp.active_users = 75
+```
+
+Every minute, new values are sent:
+
+| Time  | Response Time | Active Users |
+| ----- | ------------- | ------------ |
+| 10:00 | 180           | 75           |
+| 10:01 | 175           | 77           |
+| 10:02 | 210           | 80           |
+| 10:03 | 190           | 79           |
+
+Datadog stores these data points and displays them as time-series graphs on your dashboard. You can also create monitors to notify your team if response time becomes too high or active users suddenly drop.
+
+
+## Interview Answer (2 Minutes)
+
+> "After my Node.js application sends custom metrics to the Datadog Metrics API, Datadog stores them as time-series data. I can verify that the metrics are arriving by opening **Metrics Explorer** and searching for the metric names, such as `myapp.response_time` or `myapp.active_users`. To visualize them, I create a dashboard with Timeseries widgets and use queries like `avg:myapp.response_time{*}` or filter them by tags such as `env:dev` or `service:web`. Finally, I can create monitors that trigger alerts when a metric crosses a threshold—for example, if the average response time exceeds 300 ms over the last five minutes."
+
+---
