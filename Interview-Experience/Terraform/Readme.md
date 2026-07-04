@@ -9,3 +9,7 @@
 3. terraform refresh and terraform plan -refresh-only difference [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Terraform/mypreparation/terraform-refresh-refreshonly.md)
 
 ---
+
+4. Difference between statefile and statefile in workspaces [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Terraform/mypreparation/statefile-workspace-statefile.md)
+
+---
