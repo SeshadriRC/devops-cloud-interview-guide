@@ -1,3 +1,10 @@
+# CI/CD Pipeline Configuration 
+
+- Utilize GitHub Actions to create a CI/CD pipeline for a Node.js application hosted on AWS. The pipeline should build the application, run unit tests, and deploy to AWS Elastic Beanstalk upon successful tests. Your YAML file should include: Build steps for Node.js, Testing steps, Deployment steps using AWS CLI.
+
+Skills Evaluated: GitHub Actions Node.js application Continuous Integration/Continuous Deployment
+
+
 This is a common **DevOps interview** question. The interviewer wants to evaluate your knowledge of **GitHub Actions, Node.js, AWS CLI, Elastic Beanstalk, CI/CD, and secrets management**.
 
 ---
