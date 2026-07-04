@@ -18,6 +18,9 @@
 7. What is CRD ? [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Openshift/my-preparation/CRD.md)
 
 ---
+8. Assume there is a running deployment in kubernetes , having 3 pods. so it needs to communicate with S3 bucket in the AWS, what is the process. how it will do. it needs to upload or delete or read the file [link]()
+
+---
 
 1. How you will integrate S3 with pod in aws, what will be the requirements
 
