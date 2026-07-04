@@ -308,6 +308,7 @@ These can be displayed on Datadog dashboards or used to trigger alerts.
 
 - In many production EKS environments, applications don't call the Datadog API directly for every metric.
 
+```
 Node.js Application
         │
         ▼
@@ -316,4 +317,5 @@ Datadog Agent (DaemonSet)
         ▼
 Datadog Cloud
 
+```
 - The application sends metrics to the Datadog Agent running on the cluster, and the agent batches and forwards them efficiently. This reduces API calls and simplifies authentication.
