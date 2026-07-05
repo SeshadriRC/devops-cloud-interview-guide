@@ -20,3 +20,6 @@
 6. What is Shift left and Shift right in CICD  [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/shift-left-shift-right.md)
 
 ---
+7. What is Cold Gate and Soft Gate [Link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/cold-gate-soft-gate.md)
+
+---
