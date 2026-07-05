@@ -17,3 +17,6 @@
 5. What is UAT [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/UAT.md)
 
 ---
+6. What is Shift left and Shift right in CICD  [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/shift-left-shift-right.md)
+
+---
