@@ -70,5 +70,10 @@ ansible hosts -m setup -a "filter=ansible_os_family" -u ansible
 
 ---
 
+6. What is Ansible roles ?
 
+[link](https://medium.com/@shaiksaidavali223/understanding-ansible-roles-a-comprehensive-guide-a47b160c16b5)
+
+
+---
 
