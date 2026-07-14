@@ -23,3 +23,6 @@
 7. What is Cold Gate and Soft Gate [Link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/cold-gate-soft-gate.md)
 
 ---
+8. How to configure hashicorp vault as per Jenkins environment [Link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/enironment-secrets.md)
+
+---
