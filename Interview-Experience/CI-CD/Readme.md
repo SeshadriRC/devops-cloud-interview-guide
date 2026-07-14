@@ -26,3 +26,6 @@
 8. How to configure hashicorp vault as per Jenkins environment [Link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/enironment-secrets.md)
 
 ---
+9. Sensitive information is visible in pipeline logs [Link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/Sensitive-information.md)
+
+---
