@@ -29,3 +29,6 @@
 9. Sensitive information is visible in pipeline logs [Link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/Sensitive-information.md)
 
 ---
+10. Approval process in github actions [Link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/approval-process-git-actions.md)
+
+---
