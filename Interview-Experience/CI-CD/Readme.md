@@ -35,6 +35,6 @@
 11. Approval in Jenkins [Link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/approval-process-jenkins.md)
 
 ---
-12. What are the steps involved in sonarqube quality gate  [Link]()
+12. What are the steps involved in sonarqube quality gate  [Link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/CI-CD/my-preparation/sonarqube-quality.md)
 
 ---
