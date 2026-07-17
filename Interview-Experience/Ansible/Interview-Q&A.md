@@ -69,11 +69,12 @@ ansible hosts -m setup -a "filter=ansible_os_family" -u ansible
 [blog](https://spacelift.io/blog/ansible-handlers#what-are-ansible-handlers)
 
 ---
-
 6. What is Ansible roles ?
 
 [link](https://medium.com/@shaiksaidavali223/understanding-ansible-roles-a-comprehensive-guide-a47b160c16b5)
 
 
 ---
+7. Ansible limit particular server or particular server in a group
 
+---
