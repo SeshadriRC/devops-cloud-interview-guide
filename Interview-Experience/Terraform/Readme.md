@@ -17,3 +17,7 @@
 5. contents of provider.tf  [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Terraform/mypreparation/provider-file.md)
 
 ---
+
+6. what is lock id [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Terraform/mypreparation/lockid.md)
+
+---
