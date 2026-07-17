@@ -81,6 +81,6 @@ ansible hosts -m setup -a "filter=ansible_os_family" -u ansible
 
 ---
 
-8. Ansible secrets [link]()
+8. Ansible secrets [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Ansible/my-preparation/secrets.md)
 
 ---
