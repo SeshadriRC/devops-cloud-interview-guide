@@ -77,4 +77,6 @@ ansible hosts -m setup -a "filter=ansible_os_family" -u ansible
 ---
 7. Ansible limit particular server or particular server in a group
 
+[link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Ansible/my-preparation/limit.md)
+
 ---
