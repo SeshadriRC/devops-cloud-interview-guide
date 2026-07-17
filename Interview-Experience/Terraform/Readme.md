@@ -13,3 +13,7 @@
 4. Difference between statefile and statefile in workspaces [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Terraform/mypreparation/statefile-workspace-statefile.md)
 
 ---
+
+5. contents of provider.tf  [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Terraform/mypreparation/provider-file.md)
+
+---
