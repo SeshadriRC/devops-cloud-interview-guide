@@ -80,3 +80,7 @@ ansible hosts -m setup -a "filter=ansible_os_family" -u ansible
 [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Ansible/my-preparation/limit.md)
 
 ---
+
+8. Ansible secrets [link]()
+
+---
