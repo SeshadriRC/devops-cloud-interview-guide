@@ -24,6 +24,10 @@
 9. Memory leak [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Openshift/my-preparation/memory-leak.md)
 
 ---
+10. Difference between secret and hashicorp vault [link](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/Interview-Experience/Openshift/my-preparation/kubernetes-secret-hashicorp-difference.md)
+
+
+---
 
 1. How you will integrate S3 with pod in aws, what will be the requirements
 
