@@ -34,6 +34,7 @@ df -hT /
 sudo parted /dev/nvme0n1 print free
 Fix
 sudo growpart /dev/nvme0n1 1
+sudo resize2fs /dev/nvme0n1p1
 ```
 
 <img width="1890" height="1006" alt="image" src="https://github.com/user-attachments/assets/7f2aeedd-97d9-47ba-9941-314fbcbd0fc9" />
