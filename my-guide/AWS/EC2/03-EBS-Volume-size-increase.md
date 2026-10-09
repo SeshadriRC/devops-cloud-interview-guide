@@ -20,8 +20,85 @@ sudo growpart /dev/xvda 1
 sudo resize2fs /dev/xvda1
 ```
 
+
 - From the below image we can confirm that size is increased to 29G.
 
 <img width="1784" height="960" alt="image" src="https://github.com/user-attachments/assets/42768fd0-8e39-4d96-af40-b2a07633908f" />
 
 
+The command
+
+```
+sudo growpart /dev/xvda 1
+```
+
+is used in Linux to expand partition 1 of the disk `/dev/xvda` so it can use newly available disk space.
+
+This is commonly used on AWS EC2 when you increase an EBS volume size.
+
+## 1. Understand each part
+
+| Command     | Meaning                                        |
+| ----------- | ---------------------------------------------- |
+| `sudo`      | Runs the command with administrator privileges |
+| `growpart`  | Expands a disk partition                       |
+| `/dev/xvda` | The disk device                                |
+| `1`         | The partition number to expand                 |
+
+For example, `/dev/xvda1` refers to partition 1 on disk `/dev/xvda`.
+
+Important: `/dev/xvda` is the whole disk, whereas `/dev/xvda1` is a partition on that disk.
+
+## 2. Real-world AWS EC2 example
+
+Suppose your EC2 instance has a 10 GB EBS volume, and you increase it to 20 GB in the AWS Console.
+
+Before expanding
+
+Disk `/dev/xvda`
+
+20 GB
+
+10 GB partition
+
+10 GB unused
+
+The disk is 20 GB, but the partition is still 10 GB.
+
+After `growpart`
+
+Disk `/dev/xvda`
+
+20 GB
+
+20 GB partition
+
+The partition now uses the available disk space.
+
+## 3. Is `growpart` alone enough?
+
+Not always. You may also need to expand the filesystem so Linux can use the additional space.
+
+First, check the disk and filesystem:
+
+```
+lsblk
+df -hT
+```
+
+Then, for a typical EC2 instance using an ext4 filesystem:
+
+```
+sudo growpart /dev/xvda 1
+sudo resize2fs /dev/xvda1
+```
+
+For an XFS filesystem, you typically use `xfs_growfs` on the mounted filesystem instead:
+
+```
+sudo xfs_growfs /
+```
+
+The correct filesystem command depends on your partition layout and mount point. Check `lsblk` and `df -hT` before running it.
+
+DevOps interview answer: “When an EBS volume is increased, `growpart` expands the partition to use the additional disk space. Then I resize the filesystem, if required, so the operating system can use that space.”
