@@ -26,6 +26,20 @@ sudo resize2fs /dev/xvda1
 <img width="1784" height="960" alt="image" src="https://github.com/user-attachments/assets/42768fd0-8e39-4d96-af40-b2a07633908f" />
 
 
+----
+## for nvme01
+
+```bash
+df -hT /
+sudo parted /dev/nvme0n1 print free
+Fix
+sudo growpart /dev/nvme0n1 1
+```
+
+<img width="1890" height="1006" alt="image" src="https://github.com/user-attachments/assets/7f2aeedd-97d9-47ba-9941-314fbcbd0fc9" />
+
+
+
 The command
 
 ```
