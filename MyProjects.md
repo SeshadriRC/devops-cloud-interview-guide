@@ -24,6 +24,7 @@
 
 ## Shell scripting
 
+- [Important commands use cases](https://github.com/SeshadriRC/shell-scripting-projects/blob/main/my-preparation.md)
 - [upload-jenkins-to-S3](https://gist.github.com/SeshadriRC/cfc4cd41a7bee84e7ac368fd8e74d50d#file-upload_jenkins_build_logs-sh)
 - [Namespace-Deletion](https://github.com/SeshadriRC/documentation/tree/main/Interview-Ques/Shell-scripting/Scripts)
 - [Docker-image-deletion](https://github.com/SeshadriRC/documentation/blob/main/Interview-Ques/Shell-scripting/Interview-Q%26A.md#1-cleanup-script-homeec2-usercleanup_docker_imagessh)
