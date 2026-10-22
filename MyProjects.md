@@ -2,6 +2,7 @@
 
 - [Cost-optimization-EBS](https://github.com/SeshadriRC/Devops-Concepts/blob/main/Mastering-a-Cloud-Platform/Lambda-cost-optimization.md)
 - [Cost-optimization-RDS](https://github.com/SeshadriRC/Devops-Concepts/blob/main/Mastering-a-Cloud-Platform/RDS-automation.md)
+- [Volume-increase-Partition](https://github.com/SeshadriRC/documentation/tree/main/AWS)  -> Read first 4
 
 ## Ansible
 
