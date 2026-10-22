@@ -5,9 +5,8 @@
 
 ## Ansible
 
-- [Jenkins-installation](https://galaxy.ansible.com/ui/standalone/roles/serhii9132/jenkins/)
 - [500-VM-Monitor](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/01-Ansible/Projects/VM-monitor.md)
-- [my-ansible-automations](https://github.com/SeshadriRC/documentation/tree/main/Ansible/My-Activities)
+- [Oracle-DB patching and User creation](https://github.com/SeshadriRC/documentation/tree/main/Ansible/My-Activities)
 
 ## CICD
 
@@ -26,3 +25,4 @@
 ## Shell scripting
 
 - [upload-jenkins-to-S3](https://gist.github.com/SeshadriRC/cfc4cd41a7bee84e7ac368fd8e74d50d#file-upload_jenkins_build_logs-sh)
+- [Namespace-Deletion](https://github.com/SeshadriRC/documentation/tree/main/Interview-Ques/Shell-scripting/Scripts)
