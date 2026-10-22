@@ -19,7 +19,7 @@
 
 ## Docker
 - [Important concepts](https://github.com/SeshadriRC/Docker-Zero-to-Hero/blob/main/important-concepts.md)
-- [Dockerfiles](https://github.com/SeshadriRC/CKA-Certification-Course-2025/tree/main/Day%2005)
+- [Dockerfiles](https://github.com/SeshadriRC/CKA-Certification-Course-2025/tree/main/Day%2005/Dockerfiles)
 
 ## Observability
 
