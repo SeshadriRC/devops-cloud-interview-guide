@@ -1,3 +1,5 @@
+Ansible `--limit` is a command-line option used with `ansible-playbook` to restrict playbook execution to specific hosts or groups defined in the inventory, without modifying the playbook.
+
 If your inventory looks like this:
 
 ```ini
