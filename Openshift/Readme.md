@@ -3,6 +3,7 @@
 - Deployment failure troubleshooting ( Jenkins / Pods )
 - Chaos testing ( All nodes will get rebooted to test the resilience )
 - Namespace creation and deletion
+   - Quota and Limit range addition and removal
 - MariaDB upgrades
 - Hashicorp vault troubleshooting, service account lease removal
     - namespace access denied due to vault auth role
