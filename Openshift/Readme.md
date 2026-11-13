@@ -10,6 +10,10 @@
     - Secret engine configuration
 - Cluster Upgrades
 - Operator level troubleshooting ( Postgresql, S3 bucket )
+- AWS
+   - Service level quota increase in AWS ( snapshots / postgres db instance )
+   - Cloudtrail
+   - Cloudwatch logs of RDS instance
 
 
 ---
@@ -18,5 +22,5 @@
 
 - Node provisioning issue, cluster autoscaler troubleshooting.
 - Manually scaling node using Machineset
-- 
+- Cluster upgrade
 
