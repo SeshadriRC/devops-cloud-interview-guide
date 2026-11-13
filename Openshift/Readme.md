@@ -1,5 +1,9 @@
 ## Daily Activities
 
+- AWS
+   - Service level quota increase in AWS ( snapshots / postgres db instance )
+   - Cloudtrail
+   - Cloudwatch logs of RDS instance
 - Deployment failure troubleshooting ( Jenkins / Pods )
 - Chaos testing ( All nodes will get rebooted to test the resilience )
 - Namespace creation and deletion
@@ -11,11 +15,6 @@
     - Secret engine configuration
 - Cluster Upgrades
 - Operator level troubleshooting ( Postgresql, S3 bucket )
-- AWS
-   - Service level quota increase in AWS ( snapshots / postgres db instance )
-   - Cloudtrail
-   - Cloudwatch logs of RDS instance
-
 
 ---
 
