@@ -4,6 +4,7 @@
    - Service level quota increase in AWS ( snapshots / postgres db instance )
    - Cloudtrail
    - Cloudwatch logs of RDS instance
+   - Parameter group creation in openshift and it will reflect in AWS
 - Deployment failure troubleshooting ( Jenkins / Pods )
 - Chaos testing ( All nodes will get rebooted to test the resilience )
 - Namespace creation and deletion
