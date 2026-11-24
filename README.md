@@ -1,5 +1,7 @@
 <img width="940" height="638" alt="image" src="https://github.com/user-attachments/assets/447ad37b-1ebb-49b8-be6e-7fc32f402ff9" />
 
+[Interview-preparation](https://github.com/SeshadriRC/devops-cloud-interview-guide/wiki/Interview%E2%80%90Preparation)
+
 # DevOps & Cloud Interview Guide
 
 A comprehensive, production-ready interview preparation guide covering Cloud Architecture, Kubernetes/OpenShift, CI/CD, Infrastructure as Code, Containerization, and Observability.
